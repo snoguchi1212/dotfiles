@@ -5,14 +5,22 @@
 ### white list ###
 !alacritty/*
 !bin/*
+!bin/scripts/*
+!bin/raycast/*
 !brew/*
 !brew/brewfile/*
 !git/*
+!git/config/*
 !install/*
+!nvim/*
+!starship/*
 !tmux/*
 !vscode/*
 !vscode/extensions/*
+!vscode/settings/*
 !zsh/*
+!zsh/scripts/*
+!zsh/zim/*
 
 !.gitignore
 !/README.md
@@ -20,7 +28,14 @@
 !.gitignore
 !.gitkeep
 
-# !/brew
+# brew
+*.Brewfile.lock.json
+
+# git
+git/config/config.local
+
+# zsh
+zsh/scripts/env.zsh
 
 **.DS_Store
 *.swp
