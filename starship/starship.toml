@@ -1,0 +1,84 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[ 󰀵 ](bg:#ffffff fg:#010101)\
+[](bg:#3B76F0 fg:#ffffff)\
+$directory\
+[ ](bg:FCF392 fg:#3B76F0)\
+$git_branch\
+$git_status\
+$git_metrics\
+$fill\
+$aws\
+$nodejs\
+$cmd_duration$jobs\
+[ ](fg:#ffffff)\
+$time\
+$line_break\
+$character
+"""
+
+continuation_prompt = "[❯❯](purple)"
+
+[directory]
+read_only = "  "
+truncation_length = 4
+truncate_to_repo = false
+format = "[ $path ]($style)"
+style = "fg:#E4E4E4 bg:#3B76F0"
+
+[fill]
+symbol = " "
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
+vicmd_symbol = "[❮](green)"
+
+[aws]
+format = '[ on $symbol($profile )(\($region\) )]($style)'
+style = 'bg:#F7981D fg:#333333'
+symbol = '󰸏 '
+[aws.region_aliases]
+ap-northeast-1 = 'Tokyo'
+us-east-1 = 'va'
+[aws.profile_aliases]
+CompanyGroupFrobozzOnCallAccess = 'Frobozz'
+
+[nodejs]
+format = "[$symbol($version )]($style)"
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+style = "bright-black"
+
+[jobs]
+symbol = ""
+style = "bold red"
+number_threshold = 1
+format = "[$symbol]($style)"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[git_metrics]
+disabled = false
+
+[cmd_duration]
+format = "[$duration]($style)"
+style = "yellow"
+
+[memory_usage]
+symbol = "󰍛 "
+
+[rust]
+symbol = " "
+
+[time]
+disabled = false
+format = "[ $time  ](fg:#222222 bg:#ffffff)"
