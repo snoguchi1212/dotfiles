@@ -1,0 +1,76 @@
+#!/bin/sh
+# This is not sourced during shell startup, and it's only used to configure the
+# zimfw plugin manager.
+#
+
+# -------
+# Modules
+# -------
+
+## normaly Alphabetical order
+## some sort of modules which has order is set below
+
+# Provides archive and unarchive functions for easy archive manipulation.
+zmodule archive
+
+# asdf
+zmodule asdf
+
+# Sets sane Zsh built-in environment options.
+zmodule environment
+
+# fzf
+zmodule fzf
+
+# Provides handy git aliases and functions.
+zmodule git
+
+# homebrew
+zmodule homebrew
+
+# Applies correct bindkeys for input events.
+zmodule input
+
+# Sets a custom terminal title.
+zmodule termtitle
+
+# Utility aliases and functions. Adds colour to ls, grep and less.
+zmodule utility
+
+# This plugin adds aliases for searching with Google, Wiki, Bing, YouTube and other popular services.
+## web search
+zmodule ohmyzsh/ohmyzsh --root plugins/web-search
+
+## set modules
+# [exa]
+zmodule utility
+zmodule exa # sourced after utility
+
+#
+# Prompt
+#
+
+#
+# Completion
+#
+
+## !remark
+# some completion modules must be called in order
+
+# Additional completion definitions for Zsh.
+zmodule zsh-users/zsh-completions --fpath src
+
+# Enables and configures smart and extensive tab completion.
+# completion must be sourced after all modules that add completion definitions.
+zmodule completion
+
+# Fish-like syntax highlighting for Zsh.
+# zsh-users/zsh-syntax-highlighting must be sourced after completion
+zmodule zsh-users/zsh-syntax-highlighting
+
+# Fish-like history search (up arrow) for Zsh.
+# zsh-users/zsh-history-substring-search must be sourced after zsh-users/zsh-syntax-highlighting
+zmodule zsh-users/zsh-history-substring-search
+
+# Fish-like autosuggestions for Zsh.
+zmodule zsh-users/zsh-autosuggestions
