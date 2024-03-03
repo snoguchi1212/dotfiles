@@ -1,0 +1,18 @@
+# SSH keys
+.ssh/*
+
+# private files
+*.pem
+
+# temporary files
+*.swp
+
+# OS generated files
+.DS_Store
+.DS_Store?
+
+# trash files
+.Trashes
+
+# pyhon cache
+*.pyc
