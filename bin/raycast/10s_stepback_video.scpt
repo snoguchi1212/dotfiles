@@ -2,7 +2,7 @@
 
 # Required parameters:
 # @raycast.schemaVersion 1
-# @raycast.title stop-resume_video
+# @raycast.title 10s_stepback_video
 # @raycast.mode silent
 
 # Optional parameters:
