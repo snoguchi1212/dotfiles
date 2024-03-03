@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# install extensions
+brew bundle --file "${DOTFILES}/vscode/extensions/csv.Brewfile"
+brew bundle --file "${DOTFILES}/vscode/extensions/docker.Brewfile"
+brew bundle --file "${DOTFILES}/vscode/extensions/git.Brewfile"
+brew bundle --file "${DOTFILES}/vscode/extensions/html-css.Brewfile"
+brew bundle --file "${DOTFILES}/vscode/extensions/js.Brewfile"
+# brew bundle --file "${DOTFILES}/vscode/extensions/latex.Brewfile"
+brew bundle --file "${DOTFILES}/vscode/extensions/markdown.Brewfile"
+brew bundle --file "${DOTFILES}/vscode/extensions/php.Brewfile"
+# brew bundle --file "${DOTFILES}/vscode/extensions/powershell.Brewfile"
+brew bundle --file "${DOTFILES}/vscode/extensions/prettier-eslint.Brewfile"
+# brew bundle --file "${DOTFILES}/vscode/extensions/prisma.Brewfile"
+# brew bundle --file "${DOTFILES}/vscode/extensions/python.Brewfile"
+brew bundle --file "${DOTFILES}/vscode/extensions/react.Brewfile"
+brew bundle --file "${DOTFILES}/vscode/extensions/shell.Brewfile"
+# brew bundle --file "${DOTFILES}/vscode/extensions/sql.Brewfile"
+brew bundle --file "${DOTFILES}/vscode/extensions/swagger.Brewfile"
+brew bundle --file "${DOTFILES}/vscode/extensions/theme.Brewfile"
+brew bundle --file "${DOTFILES}/vscode/extensions/util.Brewfile"
