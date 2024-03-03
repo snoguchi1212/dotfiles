@@ -2,22 +2,22 @@
 
 ## TODO
 
-- [ ] alacritty
-- [ ] bin
-- [ ] brew
+- [x] alacritty
+- [x] bin
+- [x] brew
 - [ ] espanso (text expander)
-- [ ] git
-- [ ] install
+- [x] git
+- [x] install
 - [ ] karabiner (keyboard modifier)
 - [ ] mutt (mail client)
-- [ ] nvim
-- [ ] scripts
+- [x] nvim
+- [x] scripts
 - [ ] sketchybar
 - [ ] skhd (keyboard binder)
-- [ ] starship
-- [ ] tmux
+- [x] starship
+- [x] tmux
 - [ ] yabai
-- [ ] zsh
+- [x] zsh
 
 ## priority
 
