@@ -1,4 +1,3 @@
-#!/user/bin/env bash
 #!/usr/bin/env bash
 #
 # bootstrap installs things.
@@ -36,15 +35,15 @@ link_file() {
   local skip=
   local action=
 
-  if [ -f "$dst" ] || [ -d "$dst" ] || [ -L "$dst" ]; then
+  if [ -f "${dst}" ] || [ -d "${dst}" ] || [ -L "${dst}" ]; then
 
-    if [ "$overwrite_all" == "false" ] && [ "$backup_all" == "false" ] && [ "$skip_all" == "false" ]; then
+    if [ "$overwrite_all" = "false" ] && [ "$backup_all" = "false" ] && [ "$skip_all" = "false" ]; then
 
       # ignoring exit 1 from readlink in case where file already exists
-      local currentSrc
-      currentSrc="$(readlink "${dst}")"
+      # shellcheck disable=SC2155
+      local currentSrc=$(readlink -f "${dst}")
 
-      if [ "$currentSrc" == "$src" ]; then
+      if [ "${currentSrc}" = "$src" ]; then
 
         skip=true
 
@@ -84,17 +83,17 @@ link_file() {
     backup=${backup:-$backup_all}
     skip=${skip:-$skip_all}
 
-    if [ "$overwrite" == "true" ]; then
+    if [ "$overwrite" = "true" ]; then
       rm -rf "$dst"
       success "removed $dst"
     fi
 
-    if [ "$backup" == "true" ]; then
+    if [ "$backup" = "true" ]; then
       mv "$dst" "${dst}.backup"
       success "moved $dst to ${dst}.backup"
     fi
 
-    if [ "$skip" == "true" ]; then
+    if [ "$skip" = "true" ]; then
       success "skipped $src"
     fi
   fi
@@ -126,11 +125,11 @@ install_dotfiles() {
 }
 
 create_env_file() {
-  if test -f "${HOME}/.env.sh"; then
-    success "${HOME}/.env.sh file already exists, skipping"
+  if test -f "${DOTFILES}/zsh/scripts/env.zsh"; then
+    success "${DOTFILES}/zsh/scripts/env.zsh file already exists, skipping"
   else
-    echo "export DOTFILES=$DOTFILES" >"${HOME}/.env.sh"
-    success 'created ~/.env.sh'
+    echo "export DOTFILES=$DOTFILES" >"${DOTFILES}/zsh/scripts/env.zsh"
+    success "created ${DOTFILES}/zsh/scripts/env.zsh"
   fi
 }
 
