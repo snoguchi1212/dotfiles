@@ -1,0 +1,9 @@
+#!/bin/bash
+
+function init_prettier() {
+    cp ~/Tools/template/.prettierrc $PWD/.prettierrc
+    echo "done!"
+    exit 0
+}
+
+init_prettier

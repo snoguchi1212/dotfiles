@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# fzfで選択した項目をクリップボードにコピーするスクリプト
+
+selected_item=$(find . | fzf)
+
+# ユーザが何も選択せずに終了した場合の処理
+if [ -z "$selected_item" ]; then
+  echo "No item selected. Exiting."
+  exit 0
+fi
+
+# 選択した項目をクリップボードにコピー
+printf "$selected_item" | pbcopy
+
+echo -e "Selected item copied to clipboard:"
+echo -e "\t$selected_item"
+

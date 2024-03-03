@@ -1,0 +1,164 @@
+#!/bin/bash
+
+function useage {
+	echo -e "Usage:"
+	echo -e "\trenameQuestion [option] <old_file_name> <new_file_name>"
+	echo -e "Options"
+	echo -e "\t-q: rename question file"
+	echo -e "\t-a: rename answer file"
+	echo -e "\t-t: rename theme file"
+	echo -e "\t-s: rename similar_problem file"
+}
+
+function renameQuestion {
+  old_file_path="./question/$1.tex"
+  new_file_path="./question/$2.tex"
+  if [ -f "$old_file_path" ]; then
+      if mv "$old_file_path" "$new_file_path"; then
+        echo "renamed successfully $old_file_path to $new_file_path"
+      fi
+  else
+    echo "There isn't $old_file_path"
+  fi
+}
+
+function renameAnswer {
+  old_file_path="./answer/$1.tex"
+  new_file_path="./answer/$2.tex"
+  if [ -f $old_file_path ]; then
+      if mv "$old_file_path" "$new_file_path"; then
+        echo "renamed successfully $old_file_path to $new_file_path"
+      fi
+  else
+    echo "There isn't $old_file_path"
+  fi
+}
+
+function renameTheme {
+  old_file_path="./theme/$1.tex"
+  new_file_path="./theme/$2.tex"
+  if [ -f $old_file_path ]; then
+      if mv "$old_file_path" "$new_file_path"; then
+        echo "renamed successfully $old_file_path to $new_file_path"
+      fi
+  else
+    echo "There isn't $old_file_path"
+  fi
+}
+
+function renameSimilarProblem {
+  old_file_path="./similar_problem/$1.tex"
+  new_file_path="./similar_problem/$2.tex"
+  if [ -e $old_file_path ]; then
+      if mv "$old_file_path" "$new_file_path"; then
+        echo "renamed successfully $old_file_path to $new_file_path"
+      fi
+  else
+    echo "There isn't $old_file_path"
+  fi
+}
+
+function newFileAlreadyExists {
+  dirs=("question" "answer" "theme" "similar_problem")
+
+  for dir in "${dirs[@]}"; do
+      new_file_path="./$dir/$1.tex"
+      if [ -e "$new_file_path" ]; then
+        echo -e "Error:"
+        echo -e "\t$new_file_path already exists."
+        echo -e "\tIf you want to continue, you have to remove $new_file_path first."
+        exit 1
+      fi
+  done
+}
+
+function confirmation {
+  read -rp "Are you sure you want to rename $1.tex to $2.tex? (y/N):" yn
+  case "$yn" in [yY]*) ;; *) echo "Canceled." ; exit 1 ;; esac
+}
+
+# 初期化
+isQuestion=1
+isAnswer=1
+isTheme=1
+isSimilarProblem=1
+
+# 引数別の処理定義
+while getopts ":q:a:t:s:h" opt; do
+  case "$opt" in
+    q)
+		isQuestion=1
+		isAnswer=0
+		isTheme=0
+		isSimilarProblem=0
+    old_file_name="${OPTARG}"
+    ;;
+    a)
+		isQuestion=0
+		isAnswer=1
+		isTheme=0
+		isSimilarProblem=0
+    old_file_name="${OPTARG}"
+    ;;
+    t)
+		isQuestion=0
+		isAnswer=0
+		isTheme=1
+		isSimilarProblem=0
+    old_file_name="${OPTARG}"
+    ;;
+    s)
+		isQuestion=0
+		isAnswer=0
+		isTheme=0
+		isSimilarProblem=1
+    old_file_name="${OPTARG}"
+    ;;
+    h)
+		useage "${OPTARG}"
+		exit 0 ;;
+	\?)
+		echo "Unknown option: -${OPTARG}" >&2
+		useage
+		exit 1 ;;
+  esac
+done
+
+# Check for given argument
+if [ $# -lt 1 ]
+then
+	echo -e "You need to specify the old file name and new file name."
+	echo -e "Usage:"
+	echo -e "\trenameQuestion [option] <old_file_name> <new_file_name>"
+	exit 1
+elif [ $# -gt 3 ]
+then
+	echo -e "Too many arguments given." # -e: エスケープ文字を有効にする
+	exit 1 # errorとして処理を終了する
+fi
+
+if [ -z "$old_file_name" ]; then
+  old_file_name="$1"
+  new_file_name="$2"
+else
+  new_file_name="$3"
+fi
+
+newFileAlreadyExists "$new_file_name"
+confirmation "$old_file_name" "$new_file_name"
+
+if [ "$isQuestion" -eq 1 ]; then
+  renameQuestion "$old_file_name" "$new_file_name"
+fi
+
+if [ "$isAnswer" -eq 1 ]; then
+  renameAnswer "$old_file_name" "$new_file_name"
+fi
+
+if [ "$isTheme" -eq 1 ]; then
+  renameTheme "$old_file_name" "$new_file_name"
+fi
+
+if [ "$isSimilarProblem" -eq 1 ]; then
+  renameSimilarProblem "$old_file_name" "$new_file_name"
+fi

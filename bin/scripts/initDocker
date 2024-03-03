@@ -1,0 +1,11 @@
+#!/bin/bash
+
+function init_docker() {
+    cp ~/Tool/template/docker-compose.yml $PWD/docker-compose.yml
+    touch $PWD/dockerfile
+    mkdir $PWD/app
+    echo "done!"
+    exit 0
+}
+
+init_docker

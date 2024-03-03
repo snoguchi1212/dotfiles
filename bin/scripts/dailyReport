@@ -1,0 +1,10 @@
+#!/bin/bash
+
+function write() {
+    file_name=$(date +"%y%m%d")
+    # vim .md
+    eval "$(nvim "$file_name.md")"
+}
+
+write
+

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+function init_prettier() {
+    open /Users/snoguchi/Library/CloudStorage/Dropbox/修学塾御池校_共有/授業記録_2023年度/授業記録_のぐちしょうき.xlsx
+    killall Terminal
+    exit 0
+}
+
+init_prettier

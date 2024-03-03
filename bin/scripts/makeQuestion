@@ -1,0 +1,84 @@
+#!/bin/bash
+
+function useage {
+	echo -e "Usage:"
+	echo -e "\tmakeQuestion <file_name>"
+}
+
+function question {
+  file_path="./question/$1.tex"
+  if [ -f "$file_path" ]; then
+    echo "$file_path already exists."
+  else
+    touch "$file_path"
+    echo "question" > "$file_path"
+    echo "made successfully $file_path"
+  fi
+}
+
+function answer {
+  file_path="./answer/$1.tex"
+  if [ -f "$file_path" ]; then
+    echo "$file_path already exists."
+  else
+    touch "$file_path"
+    echo "answer" > "$file_path"
+    echo "made successfully $file_path"
+  fi
+}
+
+function theme {
+  file_path="./theme/$1.tex"
+  if [ -f "$file_path" ]; then
+    echo "$file_path already exists."
+  else
+    touch "$file_path"
+    echo "theme" > "$file_path"
+    echo "made successfully $file_path"
+  fi
+}
+
+function similarProblem {
+  file_path="./similar_problem/$1.tex"
+  if [ -f "$file_path" ]; then
+    echo "$file_path already exists."
+  else
+    touch "$file_path"
+    echo "similar problem" > "$file_path"
+    echo "made successfully $file_path"
+  fi
+}
+
+# 引数別の処理定義
+while getopts "h" opt; do
+  case "$opt" in
+    h)
+		useage "${OPTARG}"
+		exit 0 ;;
+	\?)
+		echo "Unknown option: -${OPTARG}" >&2
+		useage
+		exit 1 ;;
+  esac
+done
+
+shift $((OPTIND - 1))
+
+# Check for given argument
+if [ $# -eq 0 ]
+then
+	echo -e "You need to specify the target file name."
+	echo -e "Usage:"
+	echo -e "\tmakeQuestion <file_name>"
+	exit 1
+elif [ $# -gt 1 ]
+then
+	echo -e "Too many arguments given." # -e: エスケープ文字を有効にする
+	exit 1 # errorとして処理を終了する
+fi
+
+file_name="$1"
+question "$file_name"
+theme "$file_name"
+answer "$file_name"
+similarProblem "$file_name"

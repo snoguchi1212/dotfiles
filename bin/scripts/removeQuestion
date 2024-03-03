@@ -1,0 +1,142 @@
+#!/bin/bash
+
+function useage {
+	echo -e "Usage:"
+	echo -e "\tremoveQuestion [option] <file_name>"
+	echo -e "Options"
+	echo -e "\t-q: remove question file"
+	echo -e "\t-a: remove answer file"
+	echo -e "\t-s: remove similar_problem file"
+	echo -e "\t-a: remove answer file"
+}
+
+function removeQuestion {
+  file_path="./question/$1.tex"
+  if [ -f "$file_path" ]; then
+    if rm "$file_path"; then
+      echo "removed successfully $file_path"
+    fi
+  else
+    echo "There isn't $file_path"
+  fi
+}
+
+function removeAnswer {
+  file_path="./answer/$1.tex"
+  if [ -f "$file_path" ]; then
+    if rm "$file_path"; then
+      echo "removed successfully $file_path"
+    fi
+  else
+    echo "There isn't $file_path"
+  fi
+}
+
+function removeTheme {
+  file_path="./theme/$1.tex"
+  if [ -f "$file_path" ]; then
+    if rm "$file_path"; then
+      echo "removed successfully $file_path"
+    fi
+  else
+    echo "There isn't $file_path"
+  fi
+}
+
+function removeSimilarProblem {
+  file_path="./similar_problem/$1.tex"
+  if [ -f "$file_path" ]; then
+    if rm "$file_path"; then
+      echo "removed successfully $file_path"
+    fi
+  else
+    echo "There isn't $file_path"
+  fi
+}
+
+function confirmation {
+  read -rp "Are you sure you want to remove $1.tex? (y/N):" yn
+  case "$yn" in [yY]*) ;; *) echo "Canceled." ; exit 1 ;; esac
+}
+
+# 初期化
+isQuestion=1
+isAnswer=1
+isTheme=1
+isSimilarProblem=1
+
+# 引数別の処理定義
+while getopts ":q:a:t:s:h" opt; do
+  case "$opt" in
+    q)
+		isQuestion=1
+		isAnswer=0
+		isTheme=0
+		isSimilarProblem=0
+    file_name="${OPTARG}"
+    ;;
+    a)
+		isQuestion=0
+		isAnswer=1
+		isTheme=0
+		isSimilarProblem=0
+    file_name="${OPTARG}"
+    ;;
+    t)
+		isQuestion=0
+		isAnswer=0
+		isTheme=1
+		isSimilarProblem=0
+    file_name="${OPTARG}"
+    ;;
+    s)
+		isQuestion=0
+		isAnswer=0
+		isTheme=0
+		isSimilarProblem=1
+    file_name="${OPTARG}"
+    ;;
+    h)
+		useage "${OPTARG}"
+		exit 0 ;;
+	\?)
+		echo "Unknown option: -${OPTARG}" >&2
+		useage
+		exit 1 ;;
+  esac
+done
+
+# Check for given argument
+if [ $# -lt 1 ]
+then
+	echo -e "You need to specify the target file name."
+	echo -e "Usage:"
+	echo -e "\tremoveQuestion [option] <file_name>"
+	exit 1
+elif [ $# -gt 2 ]
+then
+	echo -e "Too many arguments given." # -e: エスケープ文字を有効にする
+	exit 1 # errorとして処理を終了する
+fi
+
+if [ -z "$file_name" ]; then
+  file_name="$1"
+fi
+
+confirmation "$file_name"
+
+if [ "$isQuestion" -eq 1 ]; then
+  removeQuestion "$file_name"
+fi
+
+if [ "$isAnswer" -eq 1 ]; then
+  removeAnswer "$file_name"
+fi
+
+if [ "$isTheme" -eq 1 ]; then
+  removeTheme "$file_name"
+fi
+
+if [ "$isSimilarProblem" -eq 1 ]; then
+  removeSimilarProblem "$file_name"
+fi

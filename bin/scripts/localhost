@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# url="http://127.0.0.0.1:{$1}"
+
+# chromium {$url}
+
+function machinelearning() {
+    open  -a "Google Chrome" http:localhost:8888
+}
+
+function web() {
+    open  -a "Google Chrome" http:localhost:80
+}
+
+
+function scraping() {
+    open -a "Google Chrome" http:localhost:8889
+}
+
+if [ $# -eq 0 ]; then
+    echo -e "You neet to specify the target domain."
+    exit 1
+elif [ $# -gt 2 ]; then
+    echo -e "Too many arguments are given"
+    exit 1
+fi
+
+if [ "$1" = "machinelearning" ]; then
+    machinelearning
+    exit 0
+fi
+
+if [ "$1" = "web" ]; then
+    web
+    exit 0
+fi
+
+if [ "$1" = "scraping" ]; then
+    scraping
+    exit 0
+fi

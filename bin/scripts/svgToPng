@@ -1,0 +1,51 @@
+#!/bin/bash
+
+function useage {
+  echo -e "Description:"
+  echo -e "\tConvert svg to png (default width: 280) under current directory."
+  echo -e "Requirement:"
+  echo -e "\tlibrsvg"
+  echo -e "Usage:"
+  echo -e "\tsvgToPng"
+  echo -e "Options"
+  echo -e "\t-h: show this help"
+  echo -e "\t-w: set width"
+  echo -e "\t\tsvgToPng -w <width>"
+}
+
+function svgToPng {
+  src="$1"
+  width="$2"
+
+  result="${src%_*}""_${width}.png"
+
+  rsvg-convert -w "${width}" "${src}" >"${result}"
+}
+
+width=280
+
+# 引数別の処理定義
+while getopts "hw:" opt; do
+  case "$opt" in
+  h)
+    useage "${OPTARG}"
+    exit 0
+    ;;
+  w)
+    width="${OPTARG}"
+    ;;
+  \?)
+    echo "Unknown option: -${OPTARG}" >&2
+    useage
+    exit 1
+    ;;
+  esac
+done
+
+file_names=$(find .)
+
+for file_name in $file_names; do
+  if [[ "$file_name" == *.svg ]]; then
+    svgToPng "${file_name}" "${width}"
+  fi
+done
