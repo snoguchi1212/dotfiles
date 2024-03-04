@@ -35,6 +35,7 @@
 git/config/config.local
 
 # zsh
+zsh/scripts/alias.local.zsh
 zsh/scripts/env.zsh
 
 **.DS_Store

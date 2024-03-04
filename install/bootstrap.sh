@@ -123,6 +123,14 @@ install_dotfiles() {
   done < <(find -H "${DOTFILES}" -maxdepth 2 -name 'links.prop' -not -path '*.git*')
   IFS=$original_IFS
 }
+create_local_alias_file() {
+  if test -f "${DOTFILES}/zsh/scripts/alias.local.zsh"; then
+    success "${DOTFILES}/zsh/scripts/alias.local.zsh file already exists, skipping"
+  else
+    echo "export DOTFILES=$DOTFILES" >"${DOTFILES}/zsh/scripts/alias.local.zsh"
+    success "created ${DOTFILES}/zsh/scripts/alias.local.zsh"
+  fi
+}
 
 create_env_file() {
   if test -f "${DOTFILES}/zsh/scripts/env.zsh"; then
@@ -134,6 +142,7 @@ create_env_file() {
 }
 
 install_dotfiles
+create_local_alias_file
 create_env_file
 
 echo ''
