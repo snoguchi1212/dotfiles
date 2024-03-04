@@ -23,6 +23,10 @@ setopt pushd_ignore_dups
 # Set editor default keymap to emacs (`-e`) or vi (`-v`)
 bindkey -v
 
+# history search
+bindkey -e
+bindkey '^R' history-incremental-search-backward
+
 # Prompt for spelling correction of commands.
 setopt CORRECT
 
