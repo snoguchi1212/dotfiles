@@ -21,4 +21,11 @@ source_if_exists $DOTFILES/zsh/scripts/path.zsh
 source_if_exists $DOTFILES/zsh/scripts/zim.zsh
 source_if_exists $DOTFILES/zsh/scripts/zim_suffix.zsh
 
+# -------------
+# hooks
+# -------------
+# direnv
+eval "$(direnv hook zsh)"
+
+# starship
 eval "$(starship init zsh)"
