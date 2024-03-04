@@ -40,6 +40,11 @@ alias bin="cd $DOTFILES/scripts"
 alias vzim="vim $DOTFILES/nvim/init.vim"
 
 # ------------------
+# starship
+# ------------------
+alias vistarship="vim $DOTFILES/starship/starship.toml"
+
+# ------------------
 # local file
 # ------------------
 [ -f $DOTFILES/zsh/scripts/alias.local.zsh ] && source $DOTFILES/zsh/scripts/alias.local.zsh
