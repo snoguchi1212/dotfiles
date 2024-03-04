@@ -9,11 +9,11 @@ $git_branch\
 $git_status\
 $git_metrics\
 $fill\
-$aws\
-$nodejs\
 $cmd_duration$jobs\
 [ ](fg:#ffffff)\
 $time\
+$aws\
+$nodejs\
 $line_break\
 $character
 """
@@ -42,8 +42,6 @@ symbol = '󰸏 '
 [aws.region_aliases]
 ap-northeast-1 = 'Tokyo'
 us-east-1 = 'va'
-[aws.profile_aliases]
-CompanyGroupFrobozzOnCallAccess = 'Frobozz'
 
 [nodejs]
 format = "[$symbol($version )]($style)"
