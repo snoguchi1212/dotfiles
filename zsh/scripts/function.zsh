@@ -5,8 +5,8 @@
 # ----------------------------------
 
 # source alias.zsh
-srca () {
-  source $DOTFILES/zsh/aliases.zsh
+srca() {
+  source $DOTFILES/zsh/scripts/alias.zsh
 }
 
 # ----------------------------------
@@ -14,6 +14,6 @@ srca () {
 # ----------------------------------
 
 # source path.zsh
-srcp () {
-  source $DOTFILES/zsh/path.zsh
+srcp() {
+  source $DOTFILES/zsh/scripts/path.zsh
 }
