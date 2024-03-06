@@ -3,6 +3,8 @@
 
 # private files
 *.pem
+*.local.*
+*.local
 
 # temporary files
 *.swp
