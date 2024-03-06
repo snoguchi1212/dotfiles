@@ -24,6 +24,7 @@ end tell
 
 delay 0.2
 
-tell application "Notion"
-	activate
+tell application "System Events" -- AppleScript Tool 2
+    key code {55, 48} -- command + Tab 元のアプリケーションに戻る
 end tell
+
