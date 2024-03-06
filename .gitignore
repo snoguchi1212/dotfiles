@@ -3,6 +3,8 @@
 !*/
 
 ### white list ###
+!.editorconfig
+
 !alacritty/*
 !bin/*
 !bin/scripts/*
