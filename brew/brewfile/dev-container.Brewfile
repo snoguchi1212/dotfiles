@@ -7,9 +7,9 @@ cask_args appdir: '/Applications'
   # Docker Community Edition for Mac
   cask 'docker'
   # A tool for exploring each layer in a docker image
-  # brew 'dive'
+  brew 'dive'
   # The lazier way to manage everything docker
-  # brew 'lazydocker'
+  brew 'lazydocker'
 ### }}}
 
 

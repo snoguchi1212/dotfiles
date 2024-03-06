@@ -7,6 +7,7 @@ cask_args appdir: '/Applications'
   # Databases and SQL IDE
   # cask 'datagrip'
 
+  # Native GUI tool for relational databases
   cask 'tableplus'
 ### }}}
 

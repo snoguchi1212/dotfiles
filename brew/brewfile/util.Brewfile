@@ -25,4 +25,6 @@ cask_args appdir: '/Applications'
   cask 'typora'
   # Control your tools with a few keystrokes
   cast 'raycast'
+  # Cross-platform Text Expander written in Rust
+  cask 'espanso'
 ### }}}
