@@ -13,3 +13,12 @@ setopt inc_append_history
 export HISTFILE=~/.zsh_history
 export HISTSIZE=100000
 export SAVEHIST=100000
+
+# ----------------------------------
+# History
+# ----------------------------------
+# history search
+function select-history() {
+  BUFFER=$(history -n -r 1 | fzf --query="$LBUFFER" --height 40% --reverse)
+  CURSOR=${#BUFFER}
+}
