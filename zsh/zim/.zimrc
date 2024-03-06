@@ -13,14 +13,11 @@
 # Provides archive and unarchive functions for easy archive manipulation.
 zmodule archive
 
-# asdf
-zmodule asdf
-
 # Sets sane Zsh built-in environment options.
 zmodule environment
 
 # fzf
-zmodule fzf
+# zmodule fzf
 
 # Provides handy git aliases and functions.
 zmodule git
@@ -32,7 +29,7 @@ zmodule homebrew
 zmodule input
 
 # Sets a custom terminal title.
-zmodule termtitle
+# zmodule termtitle
 
 # Utility aliases and functions. Adds colour to ls, grep and less.
 zmodule utility
@@ -45,6 +42,9 @@ zmodule ohmyzsh/ohmyzsh --root plugins/web-search
 # [exa]
 zmodule utility
 zmodule exa # sourced after utility
+
+# Z-zsh
+zmodule https://github.com/agkozak/zsh-z
 
 #
 # Prompt
