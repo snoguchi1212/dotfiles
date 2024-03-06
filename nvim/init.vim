@@ -1,6 +1,9 @@
 "vimで用いるshell
     set shell=/bin/zsh
 
+"vimので用いるフォント
+    set guifont="Hack Nerd font"
+
 "shiftを(>, <)利用した時の文字の幅
     set shiftwidth=4
 
