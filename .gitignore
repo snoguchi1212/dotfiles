@@ -9,6 +9,9 @@
 !bin/raycast/*
 !brew/*
 !brew/brewfile/*
+!espanso/*
+!espanso/config/*
+!espanso/match/*
 !git/*
 !git/config/*
 !install/*
