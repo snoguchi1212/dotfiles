@@ -366,7 +366,16 @@
   "markdown-preview-enhanced.previewTheme": "github-dark.css",
   "markdown-preview-enhanced.hideDefaultVSCodeMarkdownPreviewButtons": false,
   // [todo-tree]
-  "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "XXX", "[ ]", "[x]", "NOTE"],
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]",
+    "NOTE"
+  ],
   "todo-tree.highlights.defaultHighlight": {
     "gutterIcon": true
   },
@@ -400,6 +409,7 @@
   // [inbox]
   "workbench.colorTheme": "Night Owl",
   "security.workspace.trust.untrustedFiles": "open",
+  "git.autofetch": true,
   "git.openRepositoryInParentFolders": "never",
   "markdown.marp.themes": ["./marp-themes/Style.css"],
   "workbench.editor.enablePreview": false,
@@ -416,6 +426,6 @@
   "[ignore]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, Hack Nerd Font",
+  "editor.fontFamily": "Hack Nerd Font, Menlo, Monaco, 'Courier New', monospace",
   "cfnLint.path": "/opt/homebrew/bin/cfn-lint"
 }
