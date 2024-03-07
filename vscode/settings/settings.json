@@ -135,6 +135,18 @@
   "[graphql]": {
     "editor.formatOnSave": true
   },
+  // # IaaS
+  // [ terraform ]
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file"
+  },
+  "[terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file"
+  },
   // # other lang
   "[yml]": {
     "editor.insertSpaces": true,
