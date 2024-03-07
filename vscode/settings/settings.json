@@ -8,6 +8,8 @@
   // 【 Editor 】
   // フォントサイズ
   "editor.fontSize": 14,
+  // フォントファミリー
+  "editor.fontFamily": "Hack Nerd Font, Menlo, Monaco, 'Courier New', monospace",
   // タブサイズ
   "editor.tabSize": 2,
   // インデントの自動判定機能
@@ -26,6 +28,7 @@
     "*.Brewfile": "ruby",
     "*.conf": "ssh_config"
   },
+  "security.workspace.trust.untrustedFiles": "open",
   // 【 Settings on Saving Files 】
   // ファイルの自動保存設定
   "files.autoSave": "off",
@@ -37,6 +40,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   // diffEditorの空文字の表示
   "diffEditor.ignoreTrimWhitespace": false,
+  // 常に新しいタブを開く
+  "workbench.editor.enablePreview": false,
   // [Emmet]
   "emmet.triggerExpansionOnTab": true,
   "emmet.variables": {
@@ -45,6 +50,7 @@
   "editor.snippetSuggestions": "top",
   // 【 Terminal 】
   "terminal.integrated.inheritEnv": false,
+  "terminal.integrated.defaultProfile.osx": "zsh",
   // 【 Deletion】
   "explorer.confirmDelete": false,
   // 【 Completion 】
@@ -52,6 +58,8 @@
   "editor.acceptSuggestionOnEnter": "off",
   "editor.tabCompletion": "on",
   // 【 Theme 】
+  "workbench.colorTheme": "Night Owl",
+  "workbench.preferredDarkColorTheme": "Night Owl",
   // [ editor ]
   "editor.tokenColorCustomizations": {
     "textMateRules": [
@@ -63,7 +71,6 @@
       }
     ]
   },
-  "workbench.preferredDarkColorTheme": "Night Owl",
   "window.autoDetectColorScheme": true,
   // [ icon ]
   "workbench.iconTheme": "material-icon-theme",
@@ -77,6 +84,11 @@
   // 【 Others 】
   "redhat.telemetry.enabled": false,
   // ------------------------------
+  // git
+  // ------------------------------
+  "git.autofetch": true,
+  "git.openRepositoryInParentFolders": "never",
+  // ------------------------------
   // Settings defined by extensions
   // ------------------------------
   // # tool lang
@@ -85,6 +97,9 @@
     "editor.tabSize": 2
   },
   // # software lang
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
   "[html]": {
     "editor.suggest.insertMode": "replace",
     "editor.autoClosingBrackets": "always",
@@ -136,6 +151,8 @@
     "editor.formatOnSave": true
   },
   // # IaaS
+  // [ cloudformation ]
+  "cfnLint.path": "/opt/homebrew/bin/cfn-lint",
   // [ terraform ]
   "[terraform]": {
     "editor.defaultFormatter": "hashicorp.terraform",
@@ -372,22 +389,18 @@
   // [NeoVim]
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
   "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.vim",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
   // [Markdown Preview]
   "markdown.styles": ["Style.css"],
   "markdown-preview-github-styles.colorTheme": "dark",
   "markdown-preview-enhanced.previewTheme": "github-dark.css",
   "markdown-preview-enhanced.hideDefaultVSCodeMarkdownPreviewButtons": false,
+  // [marp]
+  "markdown.marp.themes": ["./marp-themes/Style.css"],
   // [todo-tree]
-  "todo-tree.general.tags": [
-    "BUG",
-    "HACK",
-    "FIXME",
-    "TODO",
-    "XXX",
-    "[ ]",
-    "[x]",
-    "NOTE"
-  ],
+  "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "XXX", "[ ]", "[x]", "NOTE"],
   "todo-tree.highlights.defaultHighlight": {
     "gutterIcon": true
   },
@@ -417,27 +430,6 @@
       "foreground": "#FF0000",
       "iconColour": "#FF0000"
     }
-  },
+  }
   // [inbox]
-  "workbench.colorTheme": "Night Owl",
-  "security.workspace.trust.untrustedFiles": "open",
-  "git.autofetch": true,
-  "git.openRepositoryInParentFolders": "never",
-  "markdown.marp.themes": ["./marp-themes/Style.css"],
-  "workbench.editor.enablePreview": false,
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
-  "terminal.integrated.defaultProfile.osx": "zsh",
-  "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[properties]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[ignore]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "editor.fontFamily": "Hack Nerd Font, Menlo, Monaco, 'Courier New', monospace",
-  "cfnLint.path": "/opt/homebrew/bin/cfn-lint"
 }
