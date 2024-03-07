@@ -11,7 +11,7 @@
     set tabstop=4
 
 "Tabをspaceに置き換える
-	set expandtab
+    set expandtab
 
 "文字のwrap設定
     set textwidth=0
@@ -49,7 +49,8 @@ let g:polyglot_disabled = ['csv']
 
 "プラグインの設定
 call plug#begin()
-    Plug 'ntk148v/vim-horizon'
+    " Plug 'ntk148v/vim-horizon'
+    Plug 'haishanh/night-owl.vim'
     Plug 'preservim/nerdtree'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
@@ -58,14 +59,28 @@ call plug#begin()
 call plug#end()
 
 """(vim-horizon)
-" if you don't set this option, this color might not correct "
+" " if you don't set this option, this color might not correct "
 
-colorscheme horizon
+" colorscheme horizon
 
-"lightline"
-let g:lightline = {}
-let g:lightline.colorscheme = 'horizon'
+" "lightline"
+" let g:lightline = {}
+" let g:lightline.colorscheme = 'horizon'
 """
+
+"""(night owl)
+
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+syntax enable
+colorscheme night-owl
+
+" To enable the lightline theme
+let g:lightline = { 'colorscheme': 'nightowl' }
+
+""""" enable the theme
 
 """(vim-gitgutter)
 " turn on line highlighting by default
