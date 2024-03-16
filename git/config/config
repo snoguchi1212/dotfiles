@@ -1,10 +1,12 @@
 [core]
-	excludesfile = /path/to/ignore
-	editor = vim
+	excludesfile = /Users/snoguchi/dotfiles/git/config/ignore
+	editor = /opt/homebrew/bin/nvim
 [include]
-	path = /path/to/config.local
+	path = /Users/snoguchi/dotfiles/git/config/config.local
 [credential]
 	helper = 
 	helper = /usr/local/share/gcm-core/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[init]
+	defaultBranch = main

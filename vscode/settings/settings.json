@@ -1,396 +1,435 @@
 {
-    // **********************
-    // --- GLOBAL SETTING ---
-    // **********************
-    // -------------------------
-    // Standard Feature Settings
-    // -------------------------
-    // 【 Editor 】
-    // フォントサイズ
-    "editor.fontSize": 14,
-    // タブサイズ
-    "editor.tabSize": 2,
-    // インデントの自動判定機能
-    "editor.detectIndentation": false,
-    // 空文字の表示
-    "editor.renderWhitespace": "all",
-    // 折り返し設定
-    "editor.wordWrap": "off",
-    // ミニマップの表示
-    "editor.minimap.enabled": false,
-    // 拡張子の対応
-    "files.associations": {
-        ".env*": "dotenv",
-        "*.tex": "latex",
-        ".prettierrc": "plaintext",
-        "*.Brewfile": "ruby",
-        "*.conf": "ssh_config"
-    },
-    // 【 Settings on Saving Files 】
-    // ファイルの自動保存設定
-    "files.autoSave": "off",
-    // ファイル保存時のフォーマット設定
+  // **********************
+  // --- GLOBAL SETTING ---
+  // **********************
+  // -------------------------
+  // Standard Feature Settings
+  // -------------------------
+  // 【 Editor 】
+  // フォントサイズ
+  "editor.fontSize": 14,
+  // フォントファミリー
+  "editor.fontFamily": "Hack Nerd Font, Menlo, Monaco, 'Courier New', monospace",
+  // タブサイズ
+  "editor.tabSize": 2,
+  // インデントの自動判定機能
+  "editor.detectIndentation": false,
+  // 空文字の表示
+  "editor.renderWhitespace": "all",
+  // 折り返し設定
+  "editor.wordWrap": "off",
+  // ミニマップの表示
+  "editor.minimap.enabled": false,
+  // 拡張子の対応
+  "files.associations": {
+    ".env*": "dotenv",
+    "*.tex": "latex",
+    ".prettierrc": "plaintext",
+    "*.Brewfile": "ruby",
+    "*.conf": "ssh_config"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  // 【 Settings on Saving Files 】
+  // ファイルの自動保存設定
+  "files.autoSave": "off",
+  // ファイル保存時のフォーマット設定
+  "editor.formatOnSave": true,
+  "prettier.tabWidth": 4,
+  // 【 Formatter 】
+  // 利用するフォーマッター
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // diffEditorの空文字の表示
+  "diffEditor.ignoreTrimWhitespace": false,
+  // 常に新しいタブを開く
+  "workbench.editor.enablePreview": false,
+  // [Emmet]
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.variables": {
+    "lang": "ja"
+  },
+  "editor.snippetSuggestions": "top",
+  // 【 Terminal 】
+  "terminal.integrated.inheritEnv": false,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  // 【 Deletion】
+  "explorer.confirmDelete": false,
+  // 【 Completion 】
+  // Enterによる補完機能
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.tabCompletion": "on",
+  // 【 Theme 】
+  "workbench.colorTheme": "Night Owl",
+  "workbench.preferredDarkColorTheme": "Night Owl",
+  // [ editor ]
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "keyword.other.dotenv",
+        "settings": {
+          "foreground": "#FF000000"
+        }
+      }
+    ]
+  },
+  "window.autoDetectColorScheme": true,
+  // [ icon ]
+  "workbench.iconTheme": "material-icon-theme",
+  // [ terminal ]
+  "terminal.integrated.fontFamily": "'Hack Nerd Font'",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.letterSpacing": 0.5,
+  "terminal.integrated.lineHeight": 1.05,
+  // 【 Mouse 】
+  "explorer.confirmDragAndDrop": false,
+  // 【 Others 】
+  "redhat.telemetry.enabled": false,
+  // ------------------------------
+  // git
+  // ------------------------------
+  "git.autofetch": true,
+  "git.openRepositoryInParentFolders": "never",
+  // ------------------------------
+  // Settings defined by extensions
+  // ------------------------------
+  // # tool lang
+  "[json]": {
     "editor.formatOnSave": true,
-    "prettier.tabWidth": 4,
-    // 【 Formatter 】
-    // 利用するフォーマッター
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    // diffEditorの空文字の表示
+    "editor.tabSize": 2
+  },
+  // # software lang
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[html]": {
+    "editor.suggest.insertMode": "replace",
+    "editor.autoClosingBrackets": "always",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2
+  },
+  "[css]": {
+    "editor.suggest.insertMode": "replace",
+    "cSpell.fixSpellingWithRenameProvider": false,
+    "editor.tabSize": 2
+  }, // css, less, scssの設定 (eslintを使用するのでfalse)
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  // JavaScript
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  // TypeScript
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.locale": "en",
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  // TypeScript (React)
+  "[typescriptreact]": {
+    "editor.formatOnSave": true
+  },
+  // Python
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.formatOnType": true
+  },
+  // php
+  // [ intelephense ]
+  "intelephense.diagnostics.undefinedTypes": false,
+  "[php]": {
+    "editor.tabSize": 4,
+    "editor.formatOnType": true
+  },
+  // # DB lang
+  "[sql]": {
+    "editor.defaultFormatter": "nmrmsys.vscode-sql-formatter-mod",
+    "editor.formatOnSave": false
+  },
+  "sql-formatter.uppercase": true,
+  // [ prettier ]
+  "[graphql]": {
+    "editor.formatOnSave": true
+  },
+  // # IaaS
+  // [ cloudformation ]
+  "cfnLint.path": "/opt/homebrew/bin/cfn-lint",
+  // [ terraform ]
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file"
+  },
+  "[terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file"
+  },
+  // # other lang
+  "[yml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "keep",
     "diffEditor.ignoreTrimWhitespace": false,
-    // [Emmet]
-    "emmet.triggerExpansionOnTab": true,
-    "emmet.variables": {
-        "lang": "ja"
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    }
+  },
+  // Custom tags for the parser to use
+  "yaml.customTags": [
+    "!And",
+    "!If",
+    "!Not",
+    "!Equals",
+    "!Or",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Join sequence"
+  ],
+
+  // md
+  "[markdown]": {
+    "editor.formatOnSave": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
     },
-    "editor.snippetSuggestions": "top",
-    // 【 Terminal 】
-    "terminal.integrated.inheritEnv": false,
-    // 【 Deletion】
-    "explorer.confirmDelete": false,
-    // 【 Completion 】
-    // Enterによる補完機能
-    "editor.acceptSuggestionOnEnter": "off",
-    "editor.tabCompletion": "on",
-    // 【 Theme 】
-    // [ editor ]
-    "editor.tokenColorCustomizations": {
-        "textMateRules": [
-            {
-                "scope": "keyword.other.dotenv",
-                "settings": {
-                    "foreground": "#FF000000"
-                }
-            }
-        ]
+    "cSpell.fixSpellingWithRenameProvider": true,
+    "cSpell.advanced.feature.useReferenceProviderWithRename": true,
+    "cSpell.advanced.feature.useReferenceProviderRemove": "/^#+\\s/"
+  },
+  // tex
+  "[tex]": {
+    // 折り返し
+    "editor.wordWrap": "on",
+    // 折り返す行
+    "editor.quickSuggestions": {
+      "other": "on",
+      "comments": "off",
+      "strings": "off"
     },
-    "workbench.preferredDarkColorTheme": "Night Owl",
-    "window.autoDetectColorScheme": true,
-    // [ icon ]
-    "workbench.iconTheme": "material-icon-theme",
-    // [ terminal ]
-    "terminal.integrated.fontFamily": "'Hack Nerd Font'",
-    "terminal.integrated.fontSize": 14,
-    "terminal.integrated.letterSpacing": 0.5,
-    "terminal.integrated.lineHeight": 1.05,
-    // 【 Mouse 】
-    "explorer.confirmDragAndDrop": false,
-    // 【 Others 】
-    "redhat.telemetry.enabled": false,
-    // ------------------------------
-    // Settings defined by extensions
-    // ------------------------------
-    // # tool lang
-    "[json]": {
-        "editor.formatOnSave": true,
-        "editor.tabSize": 2
+    "editor.formatOnSave": false,
+    // スニペット補完中にも補完を使えるようにする
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
+    // インデント幅を2にする
+    "editor.tabSize": 2
+  },
+  "[latex]": {
+    // 折り返し
+    "editor.wordWrap": "on",
+    // 折り返す行
+    "editor.quickSuggestions": {
+      "other": "on",
+      "comments": "off",
+      "strings": "off"
     },
-    // # software lang
-    "[html]": {
-        "editor.suggest.insertMode": "replace",
-        "editor.autoClosingBrackets": "always",
-        "editor.formatOnSave": true,
-        "editor.tabSize": 2
+    "editor.formatOnSave": false,
+    // スニペット補完中にも補完を使えるようにする
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
+    // インデント幅を2にする
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
+  },
+  "[bibtex]": {
+    // インデント幅を2にする
+    "editor.tabSize": 2
+  },
+  // for build
+  "latex-workshop.latex.outDir": "./out",
+  "latex-workshop.latex.autoClean.run": "onBuilt",
+  "latex-workshop.latex.autoBuild.run": "never",
+  // tex-workshopで紐づけられているPDF表示コマンドで表示するPDFビューア
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.recipe.default": "latexmk (lualatex)🧋",
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk (lualatex)🧋",
+      "tools": ["lualatexmk"]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "lualatexmk",
+      "command": "latexmk",
+      "args": [
+        "-f",
+        "-synctex=1",
+        "-file-line-error",
+        "-interaction=nonstopmode",
+        "-lualatex",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {}
+    }
+  ],
+  // code-snippets
+  "[code-snippets]": {
+    // スニペット補完中にも補完を使えるようにする
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
+    // インデント幅を2にする
+    "editor.tabSize": 2
+  },
+  // ------------------
+  // Utility Extension Settings
+  // ------------------
+  // !! linterの設定はStandard Feature Settingsに記載 !!
+  // [ cSpell ]
+  "cSpell.userWords": [
+    "alignref",
+    "amsmath",
+    "amssymb",
+    "Authenticatable",
+    "bibitem",
+    "Borel",
+    "Broadphase",
+    "cdotss",
+    "Christoffel",
+    "columnseprule",
+    "Darboux",
+    "debugbar",
+    "defi",
+    "documentclass",
+    "ensuremath",
+    "espanso",
+    "esssup",
+    "fancyhdr",
+    "fancypagestyle",
+    "figurename",
+    "figurenameref",
+    "fleqn",
+    "forall",
+    "GLTF",
+    "graphicspath",
+    "graphicx",
+    "headrulewidth",
+    "hhhhhos",
+    "hhhhos",
+    "hhhos",
+    "hoge",
+    "huga",
+    "includegraphics",
+    "innper",
+    "innter",
+    "intelephense",
+    "laravel",
+    "lder",
+    "lemm",
+    "leqno",
+    "Lipschitz",
+    "longtable",
+    "lstlistingname",
+    "lstlistingnameref",
+    "ltjsarticle",
+    "maketitle",
+    "Matcap",
+    "mathrm",
+    "mathrsfs",
+    "Metalness",
+    "mondai",
+    "multicol",
+    "multirow",
+    "nccmath",
+    "newcommand",
+    "newcounter",
+    "newpage",
+    "newtheorem",
+    "noindent",
+    "operatorname",
+    "pagebreak",
+    "Parseval",
+    "pdftk",
+    "piyo",
+    "plistings",
+    "pxrubrica",
+    "Raycaster",
+    "rema",
+    "renewcommand",
+    "renshuu",
+    "rubyintergap",
+    "rubysetup",
+    "Selberg",
+    "setcounter",
+    "setlength",
+    "setspace",
+    "setstretch",
+    "Sieltjes変換のPadé近似",
+    "Stieltjes",
+    "subti",
+    "tablename",
+    "tablenameref",
+    "tableofcontents",
+    "textbf",
+    "thebibliography",
+    "theo",
+    "tlcomb",
+    "tlinner",
+    "tlperm",
+    "tocdepth",
+    "usepackage"
+  ],
+  // [ liveServer　]
+  "liveServer.settings.donotVerifyTags": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  // [NeoVim]
+  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.vim",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  // [Markdown Preview]
+  "markdown.styles": ["Style.css"],
+  "markdown-preview-github-styles.colorTheme": "dark",
+  "markdown-preview-enhanced.previewTheme": "github-dark.css",
+  "markdown-preview-enhanced.hideDefaultVSCodeMarkdownPreviewButtons": false,
+  // [marp]
+  "markdown.marp.themes": ["./marp-themes/Style.css"],
+  // [todo-tree]
+  "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "XXX", "[ ]", "[x]", "NOTE"],
+  "todo-tree.highlights.defaultHighlight": {
+    "gutterIcon": true
+  },
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "icon": "checklist",
+      "foreground": "#32CD32",
+      "iconColour": "#32CD32"
     },
-    "[css]": {
-        "editor.suggest.insertMode": "replace",
-        "cSpell.fixSpellingWithRenameProvider": false,
-        "editor.tabSize": 2
-    }, // css, less, scssの設定 (eslintを使用するのでfalse)
-    "css.validate": false,
-    "less.validate": false,
-    "scss.validate": false,
-    // JavaScript
-    "[javascript]": {
-        "editor.formatOnSave": true
+    "FIXME": {
+      "icon": "flame",
+      "foreground": "#EE4B2B",
+      "iconColour": "#EE4B2B"
     },
-    // TypeScript
-    "typescript.enablePromptUseWorkspaceTsdk": true,
-    "typescript.locale": "en",
-    "[typescript]": {
-        "editor.formatOnSave": true
+    "NOTE": {
+      "icon": "paintbrush",
+      "foreground": "#00bfff",
+      "iconColour": "#00bfff"
     },
-    // TypeScript (React)
-    "[typescriptreact]": {
-        "editor.formatOnSave": true
+    "CHECK": {
+      "icon": "plus-circle",
+      "foreground": "#F4BB44",
+      "iconColour": "#F4BB44"
     },
-    // Python
-    "[python]": {
-        "editor.tabSize": 4,
-        "editor.formatOnType": true
-    },
-    // php
-    // [ intelephense ]
-    "intelephense.diagnostics.undefinedTypes": false,
-    "[php]": {
-        "editor.tabSize": 4,
-        "editor.formatOnType": true
-    },
-    // # DB lang
-    "[sql]": {
-        "editor.defaultFormatter": "nmrmsys.vscode-sql-formatter-mod",
-        "editor.formatOnSave": false
-    },
-    "sql-formatter.uppercase": true,
-    // [ prettier ]
-    "[graphql]": {
-        "editor.formatOnSave": true
-    },
-    // # other lang
-    // md
-    "[markdown]": {
-        "editor.formatOnSave": false,
-        "editor.unicodeHighlight.ambiguousCharacters": false,
-        "editor.unicodeHighlight.invisibleCharacters": false,
-        "diffEditor.ignoreTrimWhitespace": false,
-        "editor.wordWrap": "on",
-        "editor.quickSuggestions": {
-            "comments": "off",
-            "strings": "off",
-            "other": "off"
-        },
-        "cSpell.fixSpellingWithRenameProvider": true,
-        "cSpell.advanced.feature.useReferenceProviderWithRename": true,
-        "cSpell.advanced.feature.useReferenceProviderRemove": "/^#+\\s/"
-    },
-    // tex
-    "[tex]": {
-        // 折り返し
-        "editor.wordWrap": "on",
-        // 折り返す行
-        "editor.quickSuggestions": {
-            "other": "on",
-            "comments": "off",
-            "strings": "off"
-        },
-        "editor.formatOnSave": false,
-        // スニペット補完中にも補完を使えるようにする
-        "editor.suggest.snippetsPreventQuickSuggestions": true,
-        // インデント幅を2にする
-        "editor.tabSize": 2
-    },
-    "[latex]": {
-        // 折り返し
-        "editor.wordWrap": "on",
-        // 折り返す行
-        "editor.quickSuggestions": {
-            "other": "on",
-            "comments": "off",
-            "strings": "off"
-        },
-        "editor.formatOnSave": false,
-        // スニペット補完中にも補完を使えるようにする
-        "editor.suggest.snippetsPreventQuickSuggestions": true,
-        // インデント幅を2にする
-        "editor.tabSize": 2,
-        "editor.defaultFormatter": "James-Yu.latex-workshop"
-    },
-    "[bibtex]": {
-        // インデント幅を2にする
-        "editor.tabSize": 2
-    },
-    // for build
-    "latex-workshop.latex.outDir": "./out",
-    "latex-workshop.latex.autoClean.run": "onBuilt",
-    "latex-workshop.latex.autoBuild.run": "never",
-    // tex-workshopで紐づけられているPDF表示コマンドで表示するPDFビューア
-    "latex-workshop.view.pdf.viewer": "tab",
-    "latex-workshop.latex.recipe.default": "latexmk (lualatex)🧋",
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "latexmk (lualatex)🧋",
-            "tools": ["lualatexmk"]
-        }
-    ],
-    "latex-workshop.latex.tools": [
-        {
-            "name": "lualatexmk",
-            "command": "latexmk",
-            "args": [
-                "-f",
-                "-synctex=1",
-                "-file-line-error",
-                "-interaction=nonstopmode",
-                "-lualatex",
-                "-outdir=%OUTDIR%",
-                "%DOC%"
-            ],
-            "env": {}
-        }
-    ],
-    // code-snippets
-    "[code-snippets]": {
-        // スニペット補完中にも補完を使えるようにする
-        "editor.suggest.snippetsPreventQuickSuggestions": true,
-        // インデント幅を2にする
-        "editor.tabSize": 2
-    },
-    // ------------------
-    // Utility Extension Settings
-    // ------------------
-    // !! linterの設定はStandard Feature Settingsに記載 !!
-    // [ cSpell ]
-    "cSpell.userWords": [
-        "alignref",
-        "amsmath",
-        "amssymb",
-        "Authenticatable",
-        "bibitem",
-        "Borel",
-        "Broadphase",
-        "cdotss",
-        "Christoffel",
-        "columnseprule",
-        "Darboux",
-        "debugbar",
-        "defi",
-        "documentclass",
-        "ensuremath",
-        "esssup",
-        "fancyhdr",
-        "fancypagestyle",
-        "figurename",
-        "figurenameref",
-        "fleqn",
-        "forall",
-        "GLTF",
-        "graphicspath",
-        "graphicx",
-        "headrulewidth",
-        "hhhhhos",
-        "hhhhos",
-        "hhhos",
-        "hoge",
-        "huga",
-        "includegraphics",
-        "innper",
-        "innter",
-        "intelephense",
-        "laravel",
-        "lder",
-        "lemm",
-        "leqno",
-        "Lipschitz",
-        "longtable",
-        "lstlistingname",
-        "lstlistingnameref",
-        "ltjsarticle",
-        "maketitle",
-        "Matcap",
-        "mathrm",
-        "mathrsfs",
-        "Metalness",
-        "mondai",
-        "multicol",
-        "multirow",
-        "nccmath",
-        "newcommand",
-        "newcounter",
-        "newpage",
-        "newtheorem",
-        "noindent",
-        "operatorname",
-        "pagebreak",
-        "Parseval",
-        "pdftk",
-        "piyo",
-        "plistings",
-        "pxrubrica",
-        "Raycaster",
-        "rema",
-        "renewcommand",
-        "renshuu",
-        "rubyintergap",
-        "rubysetup",
-        "Selberg",
-        "setcounter",
-        "setlength",
-        "setspace",
-        "setstretch",
-        "Sieltjes変換のPadé近似",
-        "Stieltjes",
-        "subti",
-        "tablename",
-        "tablenameref",
-        "tableofcontents",
-        "textbf",
-        "thebibliography",
-        "theo",
-        "tlcomb",
-        "tlinner",
-        "tlperm",
-        "tocdepth",
-        "usepackage"
-    ],
-    // [ liveServer　]
-    "liveServer.settings.donotVerifyTags": true,
-    "liveServer.settings.donotShowInfoMsg": true,
-    // [NeoVim]
-    "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
-    "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.vim",
-    // [Markdown Preview]
-    "markdown.styles": ["Style.css"],
-    "markdown-preview-github-styles.colorTheme": "dark",
-    "markdown-preview-enhanced.previewTheme": "github-dark.css",
-    "markdown-preview-enhanced.hideDefaultVSCodeMarkdownPreviewButtons": false,
-    // [todo-tree]
-    "todo-tree.general.tags": [
-        "BUG",
-        "HACK",
-        "FIXME",
-        "TODO",
-        "XXX",
-        "[ ]",
-        "[x]",
-        "NOTE"
-    ],
-    "todo-tree.highlights.defaultHighlight": {
-        "gutterIcon": true
-    },
-    "todo-tree.highlights.customHighlight": {
-        "TODO": {
-            "icon": "checklist",
-            "foreground": "#32CD32",
-            "iconColour": "#32CD32"
-        },
-        "FIXME": {
-            "icon": "flame",
-            "foreground": "#EE4B2B",
-            "iconColour": "#EE4B2B"
-        },
-        "NOTE": {
-            "icon": "paintbrush",
-            "foreground": "#00bfff",
-            "iconColour": "#00bfff"
-        },
-        "CHECK": {
-            "icon": "plus-circle",
-            "foreground": "#F4BB44",
-            "iconColour": "#F4BB44"
-        },
-        "BUG": {
-            "icon": "bug",
-            "foreground": "#FF0000",
-            "iconColour": "#FF0000"
-        }
-    },
-    // [inbox]
-    "workbench.colorTheme": "Night Owl",
-    "security.workspace.trust.untrustedFiles": "open",
-    "git.openRepositoryInParentFolders": "never",
-    "markdown.marp.themes": ["./marp-themes/Style.css"],
-    "workbench.editor.enablePreview": false,
-    "extensions.experimental.affinity": {
-        "asvetliakov.vscode-neovim": 1
-    },
-    "terminal.integrated.defaultProfile.osx": "zsh",
-    "[shellscript]": {
-        "editor.defaultFormatter": "foxundermoon.shell-format"
-    },
-    "[properties]": {
-        "editor.defaultFormatter": "foxundermoon.shell-format"
-    },
-    "[ignore]": {
-        "editor.defaultFormatter": "foxundermoon.shell-format"
-    },
-    "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, Hack Nerd Font"
+    "BUG": {
+      "icon": "bug",
+      "foreground": "#FF0000",
+      "iconColour": "#FF0000"
+    }
+  }
+  // [inbox]
 }

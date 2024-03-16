@@ -9,11 +9,14 @@ cask_args appdir: '/Applications'
   cask 'aws-vault'
   # This plugin helps you to use the AWS Command Line Interface (AWS CLI) to start and end sessions to your managed instances
   cask 'session-manager-plugin'
+  # Validate CloudFormation templates against the CloudFormation spec
+  brew 'cfn-lint'
 ### }}}
 
 
 ### HashiCorp: Terraform {{{
-  tap 'hashicorp/tap'
+  ## I will Install Terraform using asdf
+  # tap 'hashicorp/tap'
   # Tool to build, change, and version infrastructure
   # brew 'terraform'
   # A CLI tool to switch between different versions of terraform
@@ -26,11 +29,10 @@ cask_args appdir: '/Applications'
   # tap 'minamijoyo/tfupdate'
   # brew 'tfupdate'
   # Interactivity select resource to plan / apply / destroy with target option
-  # tap 'future-architect/tap'
-  # brew 'tftarget'
+  brew 'future-architect/tap/tftarget'
   # Automatic Terraform moved blocks
-  # tap 'busser/tap'
-  # brew 'tfautomv'
+  tap 'busser/tap'
+  brew 'tfautomv'
   # Tool to generate documentation from Terraform modules
   # brew 'terraform-docs'
   # A schema inspector for Terraform providers
@@ -104,9 +106,9 @@ cask_args appdir: '/Applications'
 ### CI / CD {{{
   ## GitHub Actions
   # Run your GitHub Actions locally
-  # brew 'act'
+  brew 'act'
   # Static checker for GitHub Actions workflow files
-  # brew 'actionlint'
+  brew 'actionlint'
 
   # Enables you to reproduce the CircleCI environment locally
   # brew 'circleci'

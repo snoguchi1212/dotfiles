@@ -20,7 +20,7 @@ alias vigit="vim $DOTFILES/zsh/scripts/git.zsh"
 alias vihistory="vim $DOTFILES/zsh/scripts/history.zsh"
 alias vipath="vim $DOTFILES/zsh/scripts/path.zsh"
 alias vizim="vim $DOTFILES/zsh/scripts/zim.zsh"
-alias zim="vim $DOTFILES/zsh/zimrc.zsh"
+alias zim="vim $DOTFILES/zsh/zim/zimrc.zsh"
 
 # ------------------
 # alacritty

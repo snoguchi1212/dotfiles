@@ -3,12 +3,17 @@
 !*/
 
 ### white list ###
+!.editorconfig
+
 !alacritty/*
 !bin/*
 !bin/scripts/*
 !bin/raycast/*
 !brew/*
 !brew/brewfile/*
+!espanso/*
+!espanso/config/*
+!espanso/match/*
 !git/*
 !git/config/*
 !install/*

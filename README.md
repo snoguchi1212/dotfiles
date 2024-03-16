@@ -1,11 +1,26 @@
 # dotfiles
 
+## Setup
+
+1. Install this repository at home dir.
+2. Run the below command to make symbolic link.
+
+```(bash)
+bash ~/dotfiles/bootstrap.sh && source ~/.zshrc
+```
+
+3. Then, run below command to install brew packages.
+
+```(sh)
+bash $DOTFILES/install.sh
+```
+
 ## TODO
 
 - [x] alacritty
 - [x] bin
 - [x] brew
-- [ ] espanso (text expander)
+- [x] espanso (text expander)
 - [x] git
 - [x] install
 - [ ] karabiner (keyboard modifier)

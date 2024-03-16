@@ -28,9 +28,9 @@ cask_args appdir: '/Applications'
 
   ## Git Client
   # Text interface for Git repositories
-  brew 'tig'
+  # brew 'tig'
   # A simple terminal UI for git commands
-  brew 'lazygit'
+  # brew 'lazygit'
 
   # OS X status bar application for GitHub
   # cask 'gitee'
@@ -57,7 +57,7 @@ cask_args appdir: '/Applications'
 
 ### VCS: Mercurial {{{
   # Scalable distributed version control system
-  brew 'mercurial'
+  # brew 'mercurial'
 ### }}}
 
 

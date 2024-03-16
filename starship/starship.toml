@@ -18,7 +18,7 @@ $line_break\
 $character
 """
 
-continuation_prompt = "[❯❯](purple)"
+continuation_prompt = "[>>](purple)"
 
 [directory]
 read_only = "  "
@@ -31,9 +31,9 @@ style = "fg:#E4E4E4 bg:#3B76F0"
 symbol = " "
 
 [character]
-success_symbol = "[❯](green)"
-error_symbol = "[❯](red)"
-vicmd_symbol = "[❮](green)"
+success_symbol = "[>](green)"
+error_symbol = "[>](red)"
+vicmd_symbol = "[<](green)"
 
 [aws]
 format = '[ on $symbol($profile )(\($region\) )]($style)'

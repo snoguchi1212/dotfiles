@@ -55,7 +55,7 @@ cask_args appdir: '/Applications'
 ### Shell: Zsh {{{
   # UNIX shell (command interpreter)
   # INFO: Need to add `/usr/local/bin/zsh` to `/etc/shells`
-  brew 'zsh'
+  # brew 'zsh'
   # Tips, tricks, and examples for zsh
   brew 'zsh-lovers'
 ### }}}
@@ -68,6 +68,9 @@ cask_args appdir: '/Applications'
 
 
 ### Utility {{{
+  # Extendable version manager with support for Ruby, Node.js, Erlang & more
+  brew 'asdf'
+
   # GNU File, Shell, and Text utilities
   brew 'coreutils'
   # Internet file retriever
@@ -84,7 +87,7 @@ cask_args appdir: '/Applications'
   # A command-line fuzzy finder
   brew 'fzf'
   # A smarter `cd` command
-  brew 'zoxide'
+  # brew 'zoxide'
   # Clone of cat with syntax highlighting and Git integration
   brew 'bat'
   # Pager program similar to more
@@ -112,35 +115,35 @@ cask_args appdir: '/Applications'
 
   ## Process
   # Executes a program periodically, showing output fullscreen
-  brew 'watch'
+  # brew 'watch'
   # A modern watch command. Time machine and pager etc
-  brew 'viddy'
+  # brew 'viddy'
   # A modern replacement for ps written in Rust
-  brew 'procs'
+  # brew 'procs'
   # Command-line benchmarking tool
-  brew 'hyperfine'
+  # brew 'hyperfine'
 
 
   ## Monitoring
   # Yet another cross-platform graphical process/system monitor.
-  brew 'bottom'
+  # brew 'bottom'
   # An interactive process viewer for Unix
-  brew 'htop'
+  # brew 'htop'
   # Display an interface's bandwidth usage
-  brew 'iftop'
+  # brew 'iftop'
   # Top-like interface for container metrics
-  brew 'ctop'
+  # brew 'ctop'
   # Glances an Eye on your system
-  brew 'glances'
+  # brew 'glances'
 
 
   ## MISC
   # Manage your dotfiles across multiple diverse machines, securely
-  brew 'chezmoi'
-  # Load/unload environment variables based on $PWD
-  brew 'direnv'
+  # brew 'chezmoi'
+  # Load/unload environment variables based on $PWD → asdf
+  # brew 'direnv'
   # Personal information dashboard for your Terminal
-  brew 'wtfutil'
+  # brew 'wtfutil'
 
   # Simplified and community-driven man pages
   brew 'tldr'

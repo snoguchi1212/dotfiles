@@ -2,6 +2,19 @@
   // -------------------------------
   // General
   // -------------------------------
+  {
+    "key": "shift+cmd+c",
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "copyRelativeFilePath"
+  },
+  {
+    "key": "shift+cmd+alt+c",
+    "command": "copy-relative-path-and-line-numbers.both"
+  },
   // -------------------------------
   // Activity Bar
   // -------------------------------

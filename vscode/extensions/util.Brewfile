@@ -12,16 +12,17 @@
   vscode "alefragnani.project-manager"
   vscode "ryu1kn.partial-diff"
   vscode "tamasfe.even-better-toml"
+  vscode "ezforo.copy-relative-path-and-line-numbers"
 
   ### Autocomplete {{{
     vscode "christian-kohler.path-intellisense"
     vscode "ionutvmi.path-autocomplete"
   ### }}}
 
-    ### GitHub Copilot {{{
-      vscode "GitHub.copilot"
-      vscode "GitHub.copilot-chat"
-    ### }}}
+  ### GitHub Copilot {{{
+    vscode "GitHub.copilot"
+    vscode "GitHub.copilot-chat"
+  ### }}}
 
   ### Error Suggestion {{{
     vscode "shardulm94.trailing-spaces"
