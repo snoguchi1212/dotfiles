@@ -1,62 +1,46 @@
-# original: https://github.com/catppuccin/alacritty/blob/main/catppuccin-mocha.toml
-
 [colors.primary]
-background = "#1E1E2E"
-foreground = "#ffffff"
-dim_foreground = "#CDD6F4"
-bright_foreground = "#CDD6F4"
+background = "#011627"
+foreground = "#d6deeb"
 
 [colors.cursor]
-text = "#1E1E2E"
-cursor = "#F5E0DC"
+text = "CellBackground"
+cursor = "CellForeground"
 
 [colors.vi_mode_cursor]
-text = "#1E1E2E"
-cursor = "#B4BEFE"
+text = "CellBackground"
+cursor = "#22da6e"
 
 [colors.search.matches]
-foreground = "#1E1E2E"
-background = "#A6ADC8"
+foreground = "#000000"
+background = "#22da6e"
 
 [colors.search.focused_match]
-foreground = "#1E1E2E"
-background = "#A6E3A1"
-
-[colors.footer_bar]
-foreground = "#1E1E2E"
-background = "#A6ADC8"
-
-[colors.hints.start]
-foreground = "#1E1E2E"
-background = "#F9E2AF"
-
-[colors.hints.end]
-foreground = "#1E1E2E"
-background = "#A6ADC8"
+foreground = "#ffffff"
+background = "#22da6e"
 
 [colors.selection]
-text = "#1E1E2E"
-background = "#A7C7F7"
+text = "#ffffff"
+background = "#0d486e"
 
 [colors.normal]
-black   = '#000000'
-red     = '#fe0100'
-green   = '#33ff00'
-yellow  = '#feff00'
-blue    = '#00b0ef'
-magenta = '#cc00ff'
-cyan    = '#00ffff'
-white   = '#FFFFFF'
+black = "#011627"
+red = "#EF5350"
+green = "#22da6e"
+yellow = "#c5e478"
+blue = "#82AAFF"
+magenta = "#C792EA"
+cyan = "#21c7a8"
+white = "#ffffff"
 
 [colors.bright]
-black   = '#c0c0c0'
-red     = '#fe0100'
-green   = '#33ff00'
-yellow  = '#feff00'
-blue    = '#00bfff'
-magenta = '#cc00ff'
-cyan    = '#00ffff'
-white   = '#FFFFFF'
+black = "#575656"
+red = "#EF5350"
+green = "#22da6e"
+yellow = "#ffeb95"
+blue = "#82AAFF"
+magenta = "#C792EA"
+cyan = "#7fdbca"
+white = "#ffffff"
 
 [colors.dim]
 black = "#45475A"
@@ -67,11 +51,3 @@ blue = "#0070ff"
 magenta = "#F5C2E7"
 cyan = "#94E2D5"
 white = "#BAC2DE"
-
-[[colors.indexed_colors]]
-index = 16
-color = "#FAB387"
-
-[[colors.indexed_colors]]
-index = 17
-color = "#F5E0DC"
