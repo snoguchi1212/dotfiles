@@ -1,8 +1,8 @@
 [core]
-	excludesfile = /Users/snoguchi/dotfiles/git/config/ignore
+	excludesfile = ./ignore
 	editor = /opt/homebrew/bin/nvim
 [include]
-	path = /Users/snoguchi/dotfiles/git/config/config.local
+	path = ./config.local
 [credential]
 	helper = 
 	helper = /usr/local/share/gcm-core/git-credential-manager
