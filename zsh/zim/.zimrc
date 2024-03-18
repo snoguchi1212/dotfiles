@@ -20,7 +20,7 @@ zmodule environment
 # zmodule fzf
 
 # Provides handy git aliases and functions.
-zmodule git
+# zmodule git
 
 # homebrew
 zmodule homebrew
