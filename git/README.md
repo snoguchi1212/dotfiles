@@ -13,7 +13,7 @@ Because there are some dependencies. ([git](https://formulae.brew.sh/formula/git
 2. Then, run
 
 ```(shell)
-sh $DOTFILES/git/install.sh
+sh $DOTFILES/git/settings.sh
 ```
 
 By doing these operation, you can configure git,
