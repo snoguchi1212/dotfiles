@@ -43,5 +43,7 @@ git/config/config.local
 zsh/scripts/alias.local.zsh
 zsh/scripts/env.zsh
 
+*.local.*
+
 **.DS_Store
 *.swp
