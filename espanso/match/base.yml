@@ -9,9 +9,10 @@
 # it gets replaced by the "replace" string.
 imports:
   - "./git.yml"
-  - "./work.yml"
   - "./password.local.yml"
+  - "./docker.yml"
+  - "./docker-c.yml"
 
 matches:
-  - trigger: ":espanso"
+  - trigger: ":espanso:"
     replace: "Hi there!"
