@@ -44,7 +44,8 @@ ap-northeast-1 = 'Tokyo'
 us-east-1 = 'va'
 
 [nodejs]
-format = "[$symbol($version )]($style)"
+style = "bg:#23DA6F fg:#222222"
+format = "[ $symbol($version )]($style)"
 
 [git_branch]
 symbol = " "
