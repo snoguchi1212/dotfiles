@@ -112,6 +112,9 @@ cask_args appdir: '/Applications'
   # General-purpose data compression with high compression ratio
   brew 'xz'
 
+  # Format
+  # A command-line tool to format JSON data
+  brew 'jq'
 
   ## Process
   # Executes a program periodically, showing output fullscreen

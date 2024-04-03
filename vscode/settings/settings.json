@@ -88,6 +88,11 @@
   // ------------------------------
   "git.autofetch": true,
   "git.openRepositoryInParentFolders": "never",
+  "[gitignore]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
   // ------------------------------
   // Settings defined by extensions
   // ------------------------------
@@ -99,6 +104,11 @@
   // # software lang
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  // makefile
+  "[makefile]": {
+    "editor.insertSpaces": false,
+    "editor.detectIndentation": false
   },
   "[html]": {
     "editor.suggest.insertMode": "replace",
@@ -400,7 +410,16 @@
   // [marp]
   "markdown.marp.themes": ["./marp-themes/Style.css"],
   // [todo-tree]
-  "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "XXX", "[ ]", "[x]", "NOTE"],
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]",
+    "NOTE"
+  ],
   "todo-tree.highlights.defaultHighlight": {
     "gutterIcon": true
   },
@@ -430,6 +449,9 @@
       "foreground": "#FF0000",
       "iconColour": "#FF0000"
     }
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   }
   // [inbox]
 }
