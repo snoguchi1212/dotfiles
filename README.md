@@ -2,18 +2,42 @@
 
 ## Setup
 
-1. Install this repository at home dir.
-2. Run the below command to make symbolic link.
+1. Set up Trackpad settings.
+
+```(sh)
+defaults write com.apple.AppleMultitouchTrackpad "FirstClickThreshold" -int "1"
+
+defaults write NSGlobalDomain com.apple.trackpad.forceClick -int 1
+defaults write NSGlobalDomain com.apple.trackpad.scaling -int 3
+defaults write NSGlobalDomain com.apple.trackpad.scrolling -float 0.4412
+
+# Trackpad: map bottom right corner to right-click
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool false
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool false
+```
+
+2. Install Homebrew. (`https://brew.sh/`)
+3. Install git & setup git.
+```(sh)
+brew install git
+```
+4. Install this repository at home dir.
+5. Sign in with Apple ID
+6. Run the below command to make symbolic link.
 
 ```(bash)
 bash ~/dotfiles/bootstrap.sh && source ~/.zshrc
 ```
 
-3. Then, run below command to install brew packages.
+7. Then, run below command to install brew packages & mac apps.
 
 ```(sh)
-bash $DOTFILES/install.sh
+bash $DOTFILES/brew/install.sh
 ```
+
+8. Set up git, vim, etc...
 
 ## TODO
 
