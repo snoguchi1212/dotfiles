@@ -410,16 +410,7 @@
   // [marp]
   "markdown.marp.themes": ["./marp-themes/Style.css"],
   // [todo-tree]
-  "todo-tree.general.tags": [
-    "BUG",
-    "HACK",
-    "FIXME",
-    "TODO",
-    "XXX",
-    "[ ]",
-    "[x]",
-    "NOTE"
-  ],
+  "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "XXX", "[ ]", "[x]", "NOTE"],
   "todo-tree.highlights.defaultHighlight": {
     "gutterIcon": true
   },
@@ -452,6 +443,9 @@
   },
   "[ignore]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   }
   // [inbox]
 }
