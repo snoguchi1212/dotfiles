@@ -24,8 +24,13 @@ source_if_exists $DOTFILES/zsh/scripts/zim_suffix.zsh
 # -------------
 # hooks
 # -------------
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # direnv
 eval "$(direnv hook zsh)"
 
 # starship
 eval "$(starship init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -9,6 +9,9 @@ cask_args appdir: '/Applications'
 
   # Native GUI tool for relational databases
   cask 'tableplus'
+
+  # Universal database tool and SQL client
+  cask 'dbeaver-community'
 ### }}}
 
 
