@@ -1,0 +1,9 @@
+#!/bin/bash
+
+function init_EditorConfig() {
+  cp $DOTFILES/.editorconfig $PWD/.editorconfig
+  echo "done!"
+  exit 0
+}
+
+init_EditorConfig
