@@ -15,7 +15,6 @@ imports:
   - './docker.yml'
   - './docker-c.yml'
   - './markdown.yml'
-  - './shell.yml'
 
 matches:
   - trigger: ':espanso:'
