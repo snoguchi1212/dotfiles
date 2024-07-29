@@ -19,6 +19,7 @@ tap 'buo/cask-upgrade'
 
 ### vcs {{{
   brew 'git'
+  brew 'gh'
 ### }}}
 
 ### Utility {{{
