@@ -24,7 +24,7 @@
   "files.associations": {
     ".env*": "dotenv",
     "*.tex": "latex",
-    ".prettierrc": "plaintext",
+    ".prettierrc": "json",
     "*.Brewfile": "ruby",
     "*.conf": "ssh_config"
   },
