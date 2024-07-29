@@ -1,4 +1,8 @@
 {
+  "Shebang": {
+    "prefix": ":shebang:",
+    "body": ["#!/usr/bin/env bash", ""]
+  },
   "Print for loop": {
     "prefix": ":for:",
     "body": [
