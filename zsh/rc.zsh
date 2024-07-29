@@ -33,4 +33,7 @@ eval "$(direnv hook zsh)"
 # starship
 eval "$(starship init zsh)"
 
+# gh command
+eval "$(gh completion -s zsh)"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
