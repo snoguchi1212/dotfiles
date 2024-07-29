@@ -8,11 +8,15 @@
 # Matches are substitution rules: when you type the "trigger" string
 # it gets replaced by the "replace" string.
 imports:
-  - "./git.yml"
-  - "./password.local.yml"
-  - "./docker.yml"
-  - "./docker-c.yml"
+  - './espanso.local.yml'
+  - './date.yml'
+  - './git.yml'
+  - './password.local.yml'
+  - './docker.yml'
+  - './docker-c.yml'
+  - './markdown.yml'
+  - './shell.yml'
 
 matches:
-  - trigger: ":espanso:"
-    replace: "Hi there!"
+  - trigger: ':espanso:'
+    replace: 'Hi there!'
