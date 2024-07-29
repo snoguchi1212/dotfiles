@@ -4,6 +4,7 @@
 
 ### white list ###
 !.editorconfig
+!.prettierrc
 
 !alacritty/*
 !bin/*
