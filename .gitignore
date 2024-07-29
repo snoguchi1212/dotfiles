@@ -24,6 +24,7 @@
 !vscode/*
 !vscode/extensions/*
 !vscode/settings/*
+!vscode/snippets/*
 !zsh/*
 !zsh/scripts/*
 !zsh/zim/*
