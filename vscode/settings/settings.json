@@ -425,7 +425,17 @@
   // [marp]
   "markdown.marp.themes": ["./marp-themes/Style.css"],
   // [todo-tree]
-  "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "XXX", "[ ]", "[x]", "NOTE"],
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]",
+    "NOTE",
+    "MEMO"
+  ],
   "todo-tree.highlights.defaultHighlight": {
     "gutterIcon": true
   },
