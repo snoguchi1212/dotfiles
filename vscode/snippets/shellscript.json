@@ -7,7 +7,7 @@
     "prefix": ":for:",
     "body": [
       "for (( i = 0; i < ${1:10}; i++ )); do",
-      "  ${2:echo \\$i}",
+      "  ${2:echo \\${i\\}}",
       "done"
     ]
   },
@@ -15,7 +15,7 @@
     "prefix": ":foreach:",
     "body": [
       "for ${1:e} in \"\\${${2:arr}[@]}\"; do",
-      "  ${3:echo \"\\$e\"}",
+      "  ${3:echo \"\\${e\\}\"}",
       "done"
     ]
   }
