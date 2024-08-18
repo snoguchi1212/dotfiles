@@ -16,5 +16,5 @@
 # trash files
 .Trashes
 
-# pyhon cache
+# python cache
 *.pyc
