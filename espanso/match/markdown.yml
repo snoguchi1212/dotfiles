@@ -1,3 +1,3 @@
 matches:
-  - trigger: ":mkdimg:"
-    replace: "<img style=\"margin: auto; display: block\" src=\"\" width= \"300px\" >"
+  - trigger: ':mdimg:'
+    replace: '<img style="margin: auto; display: block" src="" width= "300px" >'
