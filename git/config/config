@@ -1,6 +1,6 @@
 [core]
 	excludesfile = /Users/noguchi_shoki/dotfiles/git/config/ignore
-	editor = vim
+	editor = nvim
 [include]
 	path = /Users/noguchi_shoki/dotfiles/git/config/config.local
 [credential]
@@ -17,3 +17,5 @@
 	patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
 	allowed = AKIAIOSFODNN7EXAMPLE
 	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+[pull]
+	rebase = false

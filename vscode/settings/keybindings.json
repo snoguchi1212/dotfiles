@@ -8,11 +8,11 @@
     "when": "!terminalFocus"
   },
   {
-    "key": "shift+cmd+c",
+    "key": "cmd+l",
     "command": "copyRelativeFilePath"
   },
   {
-    "key": "shift+cmd+alt+c",
+    "key": "shift+alt+l",
     "command": "copy-relative-path-and-line-numbers.both"
   },
   // -------------------------------
@@ -289,6 +289,24 @@
     "key": "cmd+]",
     "command": "workbench.action.navigateForward",
     "when": "canNavigateBack"
+  },
+  {
+    "key": "shift+alt+cmd+t",
+    "command": "terminals.runTerminal"
+  },
+  {
+    "key": "alt+cmd+t",
+    "command": "-terminals.runTerminal"
+  },
+  {
+    "key": "ctrl+shift+alt+l",
+    "command": "bookmarks.expandSelectionToNext",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+alt+l",
+    "command": "-bookmarks.expandSelectionToNext",
+    "when": "editorTextFocus"
   }
   // -------------------------------
   // Status Bar

@@ -22,11 +22,16 @@
   "editor.minimap.enabled": false,
   // 拡張子の対応
   "files.associations": {
-    ".env*": "dotenv",
+    "*.vue": "vue",
+    "*.env*": "dotenv",
     "*.tex": "latex",
     ".prettierrc": "json",
     "*.Brewfile": "ruby",
-    "*.conf": "ssh_config"
+    "*.conf": "ssh_config",
+    "ignore": "plaintext"
+  },
+  "files.exclude": {
+    "**/.git": false
   },
   "security.workspace.trust.untrustedFiles": "open",
   // 【 Settings on Saving Files 】
@@ -34,7 +39,6 @@
   "files.autoSave": "off",
   // ファイル保存時のフォーマット設定
   "editor.formatOnSave": true,
-  "prettier.tabWidth": 4,
   // 【 Formatter 】
   // 利用するフォーマッター
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -46,6 +50,12 @@
   "emmet.triggerExpansionOnTab": true,
   "emmet.variables": {
     "lang": "ja"
+  },
+  "emmet.excludeLanguages": [],
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "vue-html": "html",
+    "markdown": "html"
   },
   "editor.snippetSuggestions": "top",
   // 【 Terminal 】
@@ -100,6 +110,11 @@
   "[json]": {
     "editor.formatOnSave": true,
     "editor.tabSize": 2
+  },
+  "[dotenv]": {
+    "editor.formatOnSave": false,
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   // # software lang
   "[shellscript]": {
@@ -320,6 +335,7 @@
     "Darboux",
     "debugbar",
     "defi",
+    "Dify",
     "documentclass",
     "ensuremath",
     "espanso",
@@ -391,7 +407,9 @@
     "setlength",
     "setspace",
     "setstretch",
+    "Shoki",
     "Sieltjes変換のPadé近似",
+    "Slidev",
     "Stieltjes",
     "subti",
     "tablename",
@@ -482,6 +500,6 @@
     "plaintext": false,
     "markdown": false,
     "scminput": false
-  },
+  }
   // [inbox]
 }

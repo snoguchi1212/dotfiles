@@ -1,0 +1,3 @@
+matches:
+  - trigger: ':setvim:'
+    replace: 'set shiftwidth=4 tabstop=4 expandtab textwidth=0 autoindent hlsearch clipboard=unnamed number'

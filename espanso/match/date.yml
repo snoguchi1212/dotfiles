@@ -1,35 +1,35 @@
 matches:
-  - trigger: ":today:"
-    replace: "{{mydate}}"
+  - trigger: ':today:'
+    replace: '{{mydate}}'
     label: "Insert today's date, such as 2022/01/15"
     vars:
       - name: mydate
         type: date
         params:
-          format: "%Y/%m/%d"
-  - trigger: ":tomorrow:"
-    replace: "{{mytime}}"
+          format: '%Y/%m/%d'
+  - trigger: ':tomorrow:'
+    replace: '{{mytime}}'
     label: "Insert tomorrow's date, such as 2022/01/16"
     vars:
       - name: mytime
         type: date
         params:
-          format: "%Y/%m/%d"
+          format: '%Y/%m/%d'
           offset: 86400
-  - trigger: ":yesterday:"
-    replace: "{{mytime}}"
+  - trigger: ':yesterday:'
+    replace: '{{mytime}}'
     label: "Insert yesterday's date, such as 2022/01/14"
     vars:
       - name: mytime
         type: date
         params:
-          format: "%Y/%m/%d"
+          format: '%Y/%m/%d'
           offset: -86400
-  - trigger: ":time:"
-    replace: "{{mytime}}"
-    label: "Insert the current time, such as 12:00:00"
+  - trigger: ':time:'
+    replace: '{{mytime}}'
+    label: 'Insert the current time, such as 12:00:00'
     vars:
       - name: mytime
         type: date
         params:
-          format: "%T"
+          format: '%T'
