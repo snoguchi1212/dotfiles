@@ -26,7 +26,8 @@
     "*.tex": "latex",
     ".prettierrc": "json",
     "*.Brewfile": "ruby",
-    "*.conf": "ssh_config"
+  "files.exclude": {
+    "**/.git": false
   },
   "security.workspace.trust.untrustedFiles": "open",
   // 【 Settings on Saving Files 】
@@ -482,6 +483,6 @@
     "plaintext": false,
     "markdown": false,
     "scminput": false
-  },
+  }
   // [inbox]
 }
