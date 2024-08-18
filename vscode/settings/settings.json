@@ -111,6 +111,11 @@
     "editor.formatOnSave": true,
     "editor.tabSize": 2
   },
+  "[dotenv]": {
+    "editor.formatOnSave": false,
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
   // # software lang
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
