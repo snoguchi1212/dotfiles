@@ -43,3 +43,7 @@ matches:
     replace: 'gh secret set ACTIONS_RUNNER_DEBUG --body true && gh secret set ACTIONS_STEP_DEBUG --body true'
   - trigger: ':gha_disable_debug:'
     replace: 'gh secret set ACTIONS_RUNNER_DEBUG --body false && gh secret set ACTIONS_STEP_DEBUG --body false'
+  - trigger: ':gskip:'
+    replace: 'git update-index --skip-worktree '
+  - trigger: ':gnoskip'
+    replace: 'git update-index --no-skip-worktree '
