@@ -1,3 +1,8 @@
 matches:
   - trigger: ':mdimg:'
     replace: '<img style="margin: auto; display: block" src="" width= "300px" >'
+  - trigger: ':mdlink:'
+    replace: '[$|$]({{clipboard}})'
+    vars:
+      - name: 'clipboard'
+        type: 'clipboard'
