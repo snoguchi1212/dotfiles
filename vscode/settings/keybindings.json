@@ -291,6 +291,14 @@
     "when": "canNavigateBack"
   },
   {
+    "key": "shift+alt+cmd+t",
+    "command": "terminals.runTerminal"
+  },
+  {
+    "key": "alt+cmd+t",
+    "command": "-terminals.runTerminal"
+  },
+  {
     "key": "ctrl+shift+alt+l",
     "command": "bookmarks.expandSelectionToNext",
     "when": "editorTextFocus"
