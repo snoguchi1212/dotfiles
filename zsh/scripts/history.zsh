@@ -19,6 +19,6 @@ export SAVEHIST=100000
 # ----------------------------------
 # history search
 function select-history() {
-  BUFFER=$(history -n -r 1 | fzf --query="$LBUFFER" --height 40% --reverse)
-  CURSOR=${#BUFFER}
+	BUFFER=$(history -n -r 1 | fzf --query="$LBUFFER" --height 40% --reverse)
+	CURSOR=${#BUFFER}
 }
