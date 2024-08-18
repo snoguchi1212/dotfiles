@@ -48,6 +48,12 @@
   "emmet.variables": {
     "lang": "ja"
   },
+  "emmet.excludeLanguages": [],
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "vue-html": "html",
+    "markdown": "html"
+  },
   "editor.snippetSuggestions": "top",
   // 【 Terminal 】
   "terminal.integrated.inheritEnv": false,
