@@ -37,51 +37,51 @@ BRANCH_CONTENTS="%(contents:subject)"
 BRANCH_FORMAT="}$BRANCH_PREFIX}$BRANCH_REF}$BRANCH_HASH}$BRANCH_DATE}$BRANCH_AUTHOR}$BRANCH_CONTENTS"
 
 show_git_head() {
-  pretty_git_log -1
-  git show -p --pretty="tformat:"
+	pretty_git_log -1
+	git show -p --pretty="tformat:"
 }
 
 pretty_git_log() {
-  git log --since="12 months ago" --graph --pretty="tformat:${LOG_FORMAT}" $* | pretty_git_format | git_page_maybe
+	git log --since="12 months ago" --graph --pretty="tformat:${LOG_FORMAT}" $* | pretty_git_format | git_page_maybe
 }
 
 pretty_git_log_all() {
-  git log --all --since="12 months ago" --graph --pretty="tformat:${LOG_FORMAT}" $* | pretty_git_format | git_page_maybe
+	git log --all --since="12 months ago" --graph --pretty="tformat:${LOG_FORMAT}" $* | pretty_git_format | git_page_maybe
 }
 
 pretty_git_branch() {
-  git branch -v --color=always --format=${BRANCH_FORMAT} $* | pretty_git_format
+	git branch -v --color=always --format=${BRANCH_FORMAT} $* | pretty_git_format
 }
 
 pretty_git_branch_sorted() {
-  git branch -v --color=always --format=${BRANCH_FORMAT} --sort=-committerdate $* | pretty_git_format
+	git branch -v --color=always --format=${BRANCH_FORMAT} --sort=-committerdate $* | pretty_git_format
 }
 
 pretty_git_format() {
-  # Replace (2 years ago) with (2 years)
-  sed -Ee 's/(^[^)]*) ago\)/\1)/' |
-    # Replace (2 years, 5 months) with (2 years)
-    sed -Ee 's/(^[^)]*), [[:digit:]]+ .*months?\)/\1)/' |
-    # Shorten time
-    sed -Ee 's/ seconds?\)/s\)/' |
-    sed -Ee 's/ minutes?\)/m\)/' |
-    sed -Ee 's/ hours?\)/h\)/' |
-    sed -Ee 's/ days?\)/d\)/' |
-    sed -Ee 's/ weeks?\)/w\)/' |
-    sed -Ee 's/ months?\)/M\)/' |
-    # Shorten names
-    sed -Ee 's/<Andrew Burgess>/<me>/' |
-    sed -Ee 's/<([^ >]+) [^>]*>/<\1>/' |
-    # Line columns up based on } delimiter
-    column -s '}' -t
+	# Replace (2 years ago) with (2 years)
+	sed -Ee 's/(^[^)]*) ago\)/\1)/' |
+		# Replace (2 years, 5 months) with (2 years)
+		sed -Ee 's/(^[^)]*), [[:digit:]]+ .*months?\)/\1)/' |
+		# Shorten time
+		sed -Ee 's/ seconds?\)/s\)/' |
+		sed -Ee 's/ minutes?\)/m\)/' |
+		sed -Ee 's/ hours?\)/h\)/' |
+		sed -Ee 's/ days?\)/d\)/' |
+		sed -Ee 's/ weeks?\)/w\)/' |
+		sed -Ee 's/ months?\)/M\)/' |
+		# Shorten names
+		sed -Ee 's/<Andrew Burgess>/<me>/' |
+		sed -Ee 's/<([^ >]+) [^>]*>/<\1>/' |
+		# Line columns up based on } delimiter
+		column -s '}' -t
 }
 
 git_page_maybe() {
-  # Page only if we're asked to.
-  if [ -n "${GIT_NO_PAGER}" ]; then
-    cat
-  else
-    # Page only if needed.
-    less --quit-if-one-screen --no-init --RAW-CONTROL-CHARS --chop-long-lines
-  fi
+	# Page only if we're asked to.
+	if [ -n "${GIT_NO_PAGER}" ]; then
+		cat
+	else
+		# Page only if needed.
+		less --quit-if-one-screen --no-init --RAW-CONTROL-CHARS --chop-long-lines
+	fi
 }

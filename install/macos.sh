@@ -11,9 +11,9 @@ sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do
-  sudo -n true
-  sleep 60
-  kill -0 "$$" || exit
+	sudo -n true
+	sleep 60
+	kill -0 "$$" || exit
 done 2>/dev/null &
 
 ###############################################################################
@@ -173,18 +173,18 @@ defaults write com.apple.dock "expose-group-apps" -bool "true"
 defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
 
 for app in "Activity Monitor" \
-  "Address Book" \
-  "Calendar" \
-  "Contacts" \
-  "Dock" \
-  "Finder" \
-  "Mail" \
-  "Messages" \
-  "Photos" \
-  "Safari" \
-  "SystemUIServer" \
-  "Terminal" \
-  "iCal"; do
-  killall "${app}" &>/dev/null
+	"Address Book" \
+	"Calendar" \
+	"Contacts" \
+	"Dock" \
+	"Finder" \
+	"Mail" \
+	"Messages" \
+	"Photos" \
+	"Safari" \
+	"SystemUIServer" \
+	"Terminal" \
+	"iCal"; do
+	killall "${app}" &>/dev/null
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
