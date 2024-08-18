@@ -22,10 +22,14 @@
   "editor.minimap.enabled": false,
   // 拡張子の対応
   "files.associations": {
-    ".env*": "dotenv",
+    "*.vue": "vue",
+    "*.env*": "dotenv",
     "*.tex": "latex",
     ".prettierrc": "json",
     "*.Brewfile": "ruby",
+    "*.conf": "ssh_config",
+    "ignore": "plaintext"
+  },
   "files.exclude": {
     "**/.git": false
   },
@@ -35,7 +39,6 @@
   "files.autoSave": "off",
   // ファイル保存時のフォーマット設定
   "editor.formatOnSave": true,
-  "prettier.tabWidth": 4,
   // 【 Formatter 】
   // 利用するフォーマッター
   "editor.defaultFormatter": "esbenp.prettier-vscode",
