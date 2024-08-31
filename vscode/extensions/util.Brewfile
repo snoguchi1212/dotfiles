@@ -13,6 +13,7 @@
   vscode "ryu1kn.partial-diff"
   vscode "tamasfe.even-better-toml"
   vscode "ezforo.copy-relative-path-and-line-numbers"
+  vscode "johnpapa.vscode-peacock"
 
   ### Autocomplete {{{
     vscode "christian-kohler.path-intellisense"
