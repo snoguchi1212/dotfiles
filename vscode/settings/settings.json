@@ -500,6 +500,53 @@
     "plaintext": false,
     "markdown": false,
     "scminput": false
-  }
+  },
+  "peacock.favoriteColors": [
+    {
+      "name": "Coral Blush",
+      "value": "#ea7265"
+    },
+    {
+      "name": "Aqua Breeze",
+      "value": "#40b8bf"
+    },
+    {
+      "name": "Sandstone Beige",
+      "value": "#d3cab2"
+    },
+    {
+      "name": "Frosted Sky",
+      "value": "#d7eaec"
+    },
+    {
+      "name": "Warm Taupe",
+      "value": "#cbb3a5"
+    },
+    {
+      "name": "Royal Orchid",
+      "value": "#9f54b5"
+    },
+    {
+      "name": "Pale Mist",
+      "value": "#ced8de"
+    },
+    {
+      "name": "Midnight Blue",
+      "value": "#223c52"
+    },
+    {
+      "name": "Slate Gray",
+      "value": "#6e7e91"
+    },
+    {
+      "name": "Forest Pine",
+      "value": "#366048"
+    }
+  ],
+  "peacock.affectStatusBar": false,
+  "peacock.affectSashHover": false,
+  "peacock.affectTabActiveBorder": true,
+  "peacock.affectActivityBar": false,
+  "peacock.affectDebuggingStatusBar": true
   // [inbox]
 }
