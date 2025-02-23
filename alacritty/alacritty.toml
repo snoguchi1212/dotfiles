@@ -65,7 +65,7 @@ bindings = [
   { key = "C", mods = "Command" ,action = "Copy" },
   { key = "V", mods = "Command" ,action = "Paste" },
   { key = "F", mods = "Command" ,action = "ToggleFullscreen" },
-  { key = "Q", mods = "Command" ,action = "Quit" },
-  { key = "W", mods = "Command" ,action = "Quit" },
+  { key = "Q", mods = "Command" ,action = "Hide" },
+  { key = "W", mods = "Command" ,action = "Hide" },
   { key = "F", mods = "Command|Control", action = "ToggleFullscreen" },
 ]
