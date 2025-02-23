@@ -18,5 +18,17 @@
       "  ${3:echo \"\\${e\\}\"}",
       "done"
     ]
+  },
+  "Print while loop": {
+    "prefix": ":while:",
+    "body": [
+      "while [[ ${1:true} ]]; do",
+      "  ${2:echo \"Hello, World!\"}",
+      "done"
+    ]
+  },
+  "color": {
+    "prefix": ":color:",
+    "body": ["echo -e \"\\${${1|RED,GREEN,BLUE|}}$0\\${RESET}\""]
   }
 }
