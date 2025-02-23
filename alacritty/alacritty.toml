@@ -49,6 +49,9 @@ y = 3
 x = 0
 y = 1
 
+[terminal.shell]
+program="/bin/bash"
+args=["-c", "$HOME/dotfiles/bin/scripts/attach_tmux"]
 
 [cursor]
 style = { shape = "Underline", blinking = "On" }
