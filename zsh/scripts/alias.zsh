@@ -52,6 +52,7 @@ alias vistarship="vim $DOTFILES/starship/starship.toml"
 # ------------------
 # cd alias
 # ------------------
+alias downloads="cd ~/Downloads"
 alias dotfiles="cd $DOTFILES"
 
 # ------------------
