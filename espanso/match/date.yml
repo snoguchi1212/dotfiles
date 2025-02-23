@@ -41,3 +41,12 @@ matches:
         type: date
         params:
           format: '%T'
+  - trigger: ':nextweek:'
+    replace: '{{mytime}}'
+    label: 'Insert the date of the next week, such as 2022/01/22'
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: '%Y/%m/%d'
+          offset: 604800
