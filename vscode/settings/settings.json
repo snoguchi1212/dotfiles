@@ -541,6 +541,10 @@
     {
       "name": "Forest Pine",
       "value": "#366048"
+    },
+    {
+      "name": "Amber",
+      "value": "#ffc107"
     }
   ],
   "peacock.affectStatusBar": false,
