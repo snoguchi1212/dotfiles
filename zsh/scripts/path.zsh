@@ -19,3 +19,6 @@ done
 # asdf
 export PATH="/opt/homebrew/opt/asdf/libexec/asdf.sh:$PATH"
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# docker
+export PATH=$HOME/.docker/bin:$PATH
