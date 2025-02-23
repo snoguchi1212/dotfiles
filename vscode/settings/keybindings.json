@@ -49,6 +49,10 @@
     "command": "workbench.action.focusNextGroup"
   },
   {
+    "key": "ctrl+g o",
+    "command": "workbench.action.focusNextGroup"
+  },
+  {
     "key": "ctrl+w ctrl+w",
     "command": "-workbench.action.focusNextGroup",
     "when": "!editorTextFocus && !filesExplorerFocus && !inSearchEditor && !replaceInputBoxFocus && !searchViewletFocus && !terminalFocus"
