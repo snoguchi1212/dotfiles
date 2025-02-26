@@ -14,6 +14,7 @@ DOTFILES=${HOME}/dotfiles
 source_if_exists $DOTFILES/zsh/scripts/env.zsh
 source_if_exists $DOTFILES/zsh/scripts/alias.zsh
 source_if_exists $DOTFILES/zsh/scripts/autoload.zsh
+source_if_exists $DOTFILES/zsh/scripts/color.zsh
 source_if_exists $DOTFILES/zsh/scripts/config.zsh
 source_if_exists $DOTFILES/zsh/scripts/function.zsh
 source_if_exists $DOTFILES/zsh/scripts/history.zsh

@@ -1,9 +1,9 @@
 #!/bin/zsh
 
 source_if_exists() {
-  if test -r "$1"; then
-    source "$1"
-  fi
+	if test -r "$1"; then
+		source "$1"
+	fi
 }
 
 # ------------------
@@ -52,6 +52,7 @@ alias vistarship="vim $DOTFILES/starship/starship.toml"
 # ------------------
 # cd alias
 # ------------------
+alias downloads="cd ~/Downloads"
 alias dotfiles="cd $DOTFILES"
 
 # ------------------

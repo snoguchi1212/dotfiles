@@ -47,3 +47,5 @@ matches:
     replace: 'git update-index --skip-worktree '
   - trigger: ':gnoskip'
     replace: 'git update-index --no-skip-worktree '
+  - trigger: ':gempty:'
+    replace: 'git commit --allow-empty -m "empty commit"'

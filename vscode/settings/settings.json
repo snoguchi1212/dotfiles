@@ -501,6 +501,7 @@
     "markdown": false,
     "scminput": false
   },
+  "github.copilot.nextEditSuggestions.enabled": true,
   "peacock.favoriteColors": [
     {
       "name": "Coral Blush",
@@ -541,6 +542,10 @@
     {
       "name": "Forest Pine",
       "value": "#366048"
+    },
+    {
+      "name": "Amber",
+      "value": "#ffc107"
     }
   ],
   "peacock.affectStatusBar": false,

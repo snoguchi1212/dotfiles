@@ -7,6 +7,14 @@ matches:
         type: date
         params:
           format: '%Y/%m/%d'
+  - trigger: ':now:'
+    replace: '{{ mynow }}'
+    label: 'Insert the current date and time, such as 202201151200'
+    vars:
+      - name: mynow
+        type: date
+        params:
+          format: '%Y%m%d%H%M'
   - trigger: ':tomorrow:'
     replace: '{{mytime}}'
     label: "Insert tomorrow's date, such as 2022/01/16"
@@ -33,3 +41,12 @@ matches:
         type: date
         params:
           format: '%T'
+  - trigger: ':nextweek:'
+    replace: '{{mytime}}'
+    label: 'Insert the date of the next week, such as 2022/01/22'
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: '%Y/%m/%d'
+          offset: 604800

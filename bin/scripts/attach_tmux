@@ -1,0 +1,7 @@
+#!/bin/bash
+
+function attach_tmux() {
+  /opt/homebrew/bin/tmux a || /opt/homebrew/bin/tmux
+}
+
+attach_tmux
