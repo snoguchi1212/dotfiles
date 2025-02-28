@@ -17,8 +17,7 @@ for dir in $(find "$HOME/.local/scripts" -type d -maxdepth 1); do
 done
 
 # asdf
-export PATH="/opt/homebrew/opt/asdf/libexec/asdf.sh:$PATH"
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+export PATH="$HOME/shims:$PATH"
 
 # docker
 export PATH=$HOME/.docker/bin:$PATH
