@@ -17,7 +17,7 @@ for dir in $(find "$HOME/.local/scripts" -type d -maxdepth 1); do
 done
 
 # asdf
-export PATH="$HOME/shims:$PATH"
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
 
 # docker
 export PATH=$HOME/.docker/bin:$PATH
