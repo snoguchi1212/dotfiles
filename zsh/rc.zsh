@@ -11,6 +11,7 @@ source_if_exists() {
 # -------------
 DOTFILES=${HOME}/dotfiles
 
+source_if_exists $DOTFILES/zsh/scripts/asdf.zsh # path.zsh よりも先に読み込む
 source_if_exists $DOTFILES/zsh/scripts/env.zsh
 source_if_exists $DOTFILES/zsh/scripts/alias.zsh
 source_if_exists $DOTFILES/zsh/scripts/autoload.zsh
