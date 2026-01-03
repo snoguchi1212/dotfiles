@@ -225,7 +225,6 @@
     "!Split",
     "!Join sequence"
   ],
-
   // md
   "[markdown]": {
     "editor.formatOnSave": false,
@@ -288,7 +287,9 @@
   "latex-workshop.latex.recipes": [
     {
       "name": "latexmk (lualatex)🧋",
-      "tools": ["lualatexmk"]
+      "tools": [
+        "lualatexmk"
+      ]
     }
   ],
   "latex-workshop.latex.tools": [
@@ -436,12 +437,17 @@
     "asvetliakov.vscode-neovim": 1
   },
   // [Markdown Preview]
-  "markdown.styles": ["Style.css"],
+  "markdown.styles": [
+    "Style.css"
+  ],
   "markdown-preview-github-styles.colorTheme": "dark",
-  "markdown-preview-enhanced.previewTheme": "github-dark.css",
+  "markdown-preview-enhanced.revealjsTheme": "solarized.css",
+  "markdown-preview-enhanced.previewTheme": "solarized-light.css",
   "markdown-preview-enhanced.hideDefaultVSCodeMarkdownPreviewButtons": false,
   // [marp]
-  "markdown.marp.themes": ["./marp-themes/Style.css"],
+  "markdown.marp.themes": [
+    "./marp-themes/Style.css"
+  ],
   // [todo-tree]
   "todo-tree.general.tags": [
     "BUG",
