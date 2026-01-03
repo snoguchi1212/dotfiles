@@ -133,10 +133,23 @@ if [ -n "${REMOTE_CONTAINERS}" ] || [ -n "${CODESPACES}" ] || [ -f /.dockerenv ]
 
         # Set zsh as default shell
         ZSH_PATH=$(which zsh)
+        CURRENT_USER=$(whoami)
+
+        # Add zsh to /etc/shells if not present
         if ! grep -q "$ZSH_PATH" /etc/shells 2>/dev/null; then
             echo "$ZSH_PATH" | $SUDO tee -a /etc/shells > /dev/null
         fi
-        $SUDO chsh -s "$ZSH_PATH" "$(whoami)" 2>/dev/null || true
+
+        # Try chsh first, fall back to sed for Alpine
+        if command -v chsh > /dev/null 2>&1; then
+            $SUDO chsh -s "$ZSH_PATH" "$CURRENT_USER" 2>/dev/null || true
+        fi
+
+        # For Alpine Linux: directly modify /etc/passwd
+        if [ "$PKG_MANAGER" = "apk" ]; then
+            $SUDO sed -i "s|^\(${CURRENT_USER}:.*:\)[^:]*$|\1${ZSH_PATH}|" /etc/passwd
+        fi
+
         echo "Set zsh as default shell"
     fi
 
