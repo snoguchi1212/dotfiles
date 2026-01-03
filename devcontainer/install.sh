@@ -9,6 +9,13 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 DOTFILES_DIR="$(dirname "$SCRIPT_DIR")"
 
+# Use sudo if available and not root, otherwise run directly
+if [ "$(id -u)" = "0" ]; then
+    SUDO=""
+else
+    SUDO="sudo"
+fi
+
 echo "Setting up devcontainer environment..."
 
 # ===================
@@ -16,12 +23,12 @@ echo "Setting up devcontainer environment..."
 # ===================
 echo "Installing prerequisites..."
 if command -v apt-get > /dev/null 2>&1; then
-    sudo apt-get update
-    sudo apt-get install -y curl git build-essential procps file
+    $SUDO apt-get update
+    $SUDO apt-get install -y curl git build-essential procps file
 elif command -v apk > /dev/null 2>&1; then
-    sudo apk add --no-cache curl git build-base procps file bash
+    $SUDO apk add --no-cache curl git build-base procps file bash
 elif command -v yum > /dev/null 2>&1; then
-    sudo yum install -y curl git gcc make procps-ng file
+    $SUDO yum install -y curl git gcc make procps-ng file
 fi
 
 # ===================
@@ -101,9 +108,9 @@ if [ -n "${REMOTE_CONTAINERS}" ] || [ -n "${CODESPACES}" ] || [ -f /.dockerenv ]
         # Set zsh as default shell
         ZSH_PATH=$(which zsh)
         if ! grep -q "$ZSH_PATH" /etc/shells; then
-            echo "$ZSH_PATH" | sudo tee -a /etc/shells
+            echo "$ZSH_PATH" | $SUDO tee -a /etc/shells
         fi
-        sudo chsh -s "$ZSH_PATH" "$(whoami)" 2>/dev/null || true
+        $SUDO chsh -s "$ZSH_PATH" "$(whoami)" 2>/dev/null || true
         echo "Set zsh as default shell"
     fi
 
