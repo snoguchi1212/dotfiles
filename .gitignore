@@ -40,6 +40,7 @@
 
 # git
 git/config/config.local
+git/gh_access_token.txt
 
 # zsh
 zsh/scripts/alias.local.zsh
