@@ -50,17 +50,25 @@ ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 # zsh-syntax-highlighting
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
-# Initialize zimfw
+# Initialize zimfw (only if .zimrc exists)
 ZIM_HOME=~/.zim
-if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
-    curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
-        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
-fi
+if [[ -f ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
+    # Download zimfw if missing
+    if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
+        curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
+            https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+    fi
 
-if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
-    source ${ZIM_HOME}/zimfw.zsh init -q
+    # Install/update modules if init.zsh is missing or outdated
+    if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
+        source ${ZIM_HOME}/zimfw.zsh init -q
+    fi
+
+    # Source zimfw
+    if [[ -f ${ZIM_HOME}/init.zsh ]]; then
+        source ${ZIM_HOME}/init.zsh
+    fi
 fi
-source ${ZIM_HOME}/init.zsh
 
 # ===================
 # Aliases
