@@ -1,8 +1,8 @@
 [core]
-	excludesfile = /Users/noguchi_shoki/dotfiles/git/config/ignore
+	excludesfile = ~/.config/git/ignore
 	editor = nvim
 [include]
-	path = /Users/noguchi_shoki/dotfiles/git/config/config.local
+	path = ~/.config/git/config.local
 [init]
 	defaultBranch = main
 [secrets]
