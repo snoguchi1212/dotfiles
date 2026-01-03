@@ -13,6 +13,7 @@
 !brew/*
 !brew/brewfile/*
 !devcontainer/*
+!devcontainer/zim/.zimrc
 !espanso/*
 !espanso/config/*
 !espanso/match/*
