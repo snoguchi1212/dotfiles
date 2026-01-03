@@ -18,3 +18,5 @@
 
 # python cache
 *.pyc
+
+**/.claude/settings.local.json
