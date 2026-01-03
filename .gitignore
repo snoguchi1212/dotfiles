@@ -12,6 +12,7 @@
 !bin/raycast/*
 !brew/*
 !brew/brewfile/*
+!devcontainer/*
 !espanso/*
 !espanso/config/*
 !espanso/match/*

@@ -1,0 +1,38 @@
+# devcontainer.Brewfile
+
+### Shell {{{
+  # UNIX shell
+  brew 'zsh'
+### }}}
+
+### Prompt {{{
+  # The minimal, blazing-fast, and infinitely customizable prompt for any shell
+  brew 'starship'
+### }}}
+
+### Editor {{{
+  # Ambitious Vim-fork focused on extensibility and agility
+  brew 'neovim'
+### }}}
+
+### Utility {{{
+  # Modern replacement for `ls`
+  brew 'eza'
+  # Display directories as trees
+  brew 'tree'
+  # A command-line fuzzy finder
+  brew 'fzf'
+  # Clone of cat with syntax highlighting and Git integration
+  brew 'bat'
+  # Pager program similar to more
+  brew 'less'
+  # A command-line tool to format JSON data
+  brew 'jq'
+  # Functions like rm but with the ability to restore files
+  brew 'gomi'
+### }}}
+
+### Font Family: Terminal {{{
+  # Nerd Font for starship icons
+  cask 'homebrew/cask-fonts/font-hack-nerd-font'
+### }}}
