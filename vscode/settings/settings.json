@@ -441,7 +441,8 @@
     "Style.css"
   ],
   "markdown-preview-github-styles.colorTheme": "dark",
-  "markdown-preview-enhanced.previewTheme": "github-dark.css",
+  "markdown-preview-enhanced.revealjsTheme": "solarized.css",
+  "markdown-preview-enhanced.previewTheme": "solarized-light.css",
   "markdown-preview-enhanced.hideDefaultVSCodeMarkdownPreviewButtons": false,
   // [marp]
   "markdown.marp.themes": [
