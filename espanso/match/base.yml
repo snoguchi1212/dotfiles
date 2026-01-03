@@ -14,6 +14,8 @@ imports:
   - './password.local.yml'
   - './docker.yml'
   - './docker-c.yml'
+  - './slack.local.yml'
+  - './ssh.local.yml'
   - './markdown.yml'
 
 matches:
