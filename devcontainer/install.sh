@@ -61,21 +61,44 @@ echo "Detected package manager: $PKG_MANAGER"
 # ===================
 echo "Installing packages..."
 
+# Function to install git-secrets from source
+install_git_secrets() {
+    if command -v git-secrets > /dev/null 2>&1; then
+        echo "git-secrets is already installed"
+        return
+    fi
+
+    echo "Installing git-secrets from source..."
+    TEMP_DIR=$(mktemp -d)
+    git clone https://github.com/awslabs/git-secrets.git "$TEMP_DIR/git-secrets"
+    cd "$TEMP_DIR/git-secrets"
+    $SUDO make install
+    cd -
+    rm -rf "$TEMP_DIR"
+    echo "git-secrets installed successfully"
+}
+
 case "$PKG_MANAGER" in
     apk)
         # Alpine Linux - install everything via apk (Homebrew not supported)
         $SUDO apk add --no-cache \
             curl git build-base procps file bash \
             zsh starship neovim eza tree fzf bat less jq
+        # Install git-secrets from source (not available in apk)
+        install_git_secrets
         ;;
     apt)
         $SUDO apt-get update
         $SUDO apt-get install -y curl git build-essential procps file
         install_homebrew_packages
+        # Install git-secrets from source (not in Homebrew by default)
+        install_git_secrets
         ;;
     yum)
         $SUDO yum install -y curl git gcc make procps-ng file
         install_homebrew_packages
+        # Install git-secrets from source
+        install_git_secrets
         ;;
     *)
         echo "Warning: Unknown package manager, skipping package installation"
