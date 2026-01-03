@@ -68,6 +68,7 @@ alias typora="open -a typora"
 # Cloud
 # ------------------
 alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents"
+alias slack="~/.local/slack/slack"
 
 # ------------------
 # Shortcuts
