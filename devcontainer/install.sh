@@ -1,21 +1,34 @@
-#!/bin/bash
+#!/bin/sh
 
 # Devcontainer setup script
 # This script sets up starship, git config, and useful aliases for devcontainers
 
 set -e
 
-# Get the directory where this script is located
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Get the directory where this script is located (POSIX compatible)
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 DOTFILES_DIR="$(dirname "$SCRIPT_DIR")"
 
 echo "Setting up devcontainer environment..."
 
 # ===================
+# Prerequisites
+# ===================
+echo "Installing prerequisites..."
+if command -v apt-get > /dev/null 2>&1; then
+    sudo apt-get update
+    sudo apt-get install -y curl git build-essential procps file
+elif command -v apk > /dev/null 2>&1; then
+    sudo apk add --no-cache curl git build-base procps file bash
+elif command -v yum > /dev/null 2>&1; then
+    sudo yum install -y curl git gcc make procps-ng file
+fi
+
+# ===================
 # Homebrew
 # ===================
 echo "Installing Homebrew..."
-if ! command -v brew &> /dev/null; then
+if ! command -v brew > /dev/null 2>&1; then
     NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     # Add brew to PATH for current session
@@ -72,7 +85,7 @@ echo "Setting up shell configuration..."
 # Check if running inside a devcontainer
 if [ -n "${REMOTE_CONTAINERS}" ] || [ -n "${CODESPACES}" ] || [ -f /.dockerenv ]; then
     # Setup zshrc for devcontainer
-    if command -v zsh &> /dev/null; then
+    if command -v zsh > /dev/null 2>&1; then
         # Backup existing .zshrc if it exists and is not a symlink
         if [ -f ~/.zshrc ] && [ ! -L ~/.zshrc ]; then
             mv ~/.zshrc ~/.zshrc.backup
@@ -84,6 +97,14 @@ if [ -n "${REMOTE_CONTAINERS}" ] || [ -n "${CODESPACES}" ] || [ -f /.dockerenv ]
         # Setup .zimrc for devcontainer
         ln -sf "${SCRIPT_DIR}/zim/.zimrc" ~/.zimrc
         echo "Linked devcontainer .zimrc"
+
+        # Set zsh as default shell
+        ZSH_PATH=$(which zsh)
+        if ! grep -q "$ZSH_PATH" /etc/shells; then
+            echo "$ZSH_PATH" | sudo tee -a /etc/shells
+        fi
+        sudo chsh -s "$ZSH_PATH" "$(whoami)" 2>/dev/null || true
+        echo "Set zsh as default shell"
     fi
 
     # Setup bashrc with starship
