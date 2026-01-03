@@ -68,6 +68,7 @@ alias typora="open -a typora"
 # Cloud
 # ------------------
 alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents"
+alias slack="~/.local/slack/slack"
 
 # ------------------
 # Shortcuts
@@ -92,3 +93,4 @@ alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 # Linux Commands
 alias ls="eza"
 alias exa="eza"
+alias rm="gomi"

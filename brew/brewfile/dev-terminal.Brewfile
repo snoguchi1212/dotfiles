@@ -154,4 +154,6 @@ cask_args appdir: '/Applications'
   brew 'cheat'
   # Record and share your terminal sessions, the simple way
   brew 'asciinema'
+  # Functions like rm but with the ability to restore files
+  brew 'gomi'
 ### }}}
