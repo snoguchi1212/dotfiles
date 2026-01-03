@@ -16,45 +16,71 @@ else
     SUDO="sudo"
 fi
 
-echo "Setting up devcontainer environment..."
-
-# ===================
-# Prerequisites
-# ===================
-echo "Installing prerequisites..."
-if command -v apt-get > /dev/null 2>&1; then
-    $SUDO apt-get update
-    $SUDO apt-get install -y curl git build-essential procps file
-elif command -v apk > /dev/null 2>&1; then
-    $SUDO apk add --no-cache curl git build-base procps file bash
-elif command -v yum > /dev/null 2>&1; then
-    $SUDO yum install -y curl git gcc make procps-ng file
-fi
-
-# ===================
-# Homebrew
-# ===================
-echo "Installing Homebrew..."
-if ! command -v brew > /dev/null 2>&1; then
-    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-    # Add brew to PATH for current session
-    if [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
-        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-    elif [ -f /opt/homebrew/bin/brew ]; then
-        eval "$(/opt/homebrew/bin/brew shellenv)"
-    elif [ -f /usr/local/bin/brew ]; then
-        eval "$(/usr/local/bin/brew shellenv)"
+# Detect package manager
+detect_pkg_manager() {
+    if command -v apk > /dev/null 2>&1; then
+        echo "apk"
+    elif command -v apt-get > /dev/null 2>&1; then
+        echo "apt"
+    elif command -v yum > /dev/null 2>&1; then
+        echo "yum"
+    else
+        echo "unknown"
     fi
-else
-    echo "Homebrew is already installed"
-fi
+}
+
+PKG_MANAGER=$(detect_pkg_manager)
+
+# Function to install Homebrew and packages (for glibc-based systems)
+install_homebrew_packages() {
+    echo "Installing Homebrew..."
+    if ! command -v brew > /dev/null 2>&1; then
+        NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+        # Add brew to PATH for current session
+        if [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
+            eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+        elif [ -f /opt/homebrew/bin/brew ]; then
+            eval "$(/opt/homebrew/bin/brew shellenv)"
+        elif [ -f /usr/local/bin/brew ]; then
+            eval "$(/usr/local/bin/brew shellenv)"
+        fi
+    else
+        echo "Homebrew is already installed"
+    fi
+
+    echo "Installing brew packages..."
+    brew bundle --file "${SCRIPT_DIR}/Brewfile"
+}
+
+echo "Setting up devcontainer environment..."
+echo "Detected package manager: $PKG_MANAGER"
 
 # ===================
-# Brew packages
+# Prerequisites & Packages
 # ===================
-echo "Installing brew packages..."
-brew bundle --file "${SCRIPT_DIR}/Brewfile"
+echo "Installing packages..."
+
+case "$PKG_MANAGER" in
+    apk)
+        # Alpine Linux - install everything via apk (Homebrew not supported)
+        $SUDO apk add --no-cache \
+            curl git build-base procps file bash \
+            zsh starship neovim eza tree fzf bat less jq
+        ;;
+    apt)
+        $SUDO apt-get update
+        $SUDO apt-get install -y curl git build-essential procps file
+        install_homebrew_packages
+        ;;
+    yum)
+        $SUDO yum install -y curl git gcc make procps-ng file
+        install_homebrew_packages
+        ;;
+    *)
+        echo "Warning: Unknown package manager, skipping package installation"
+        ;;
+esac
 
 # ===================
 # Starship config
@@ -107,8 +133,8 @@ if [ -n "${REMOTE_CONTAINERS}" ] || [ -n "${CODESPACES}" ] || [ -f /.dockerenv ]
 
         # Set zsh as default shell
         ZSH_PATH=$(which zsh)
-        if ! grep -q "$ZSH_PATH" /etc/shells; then
-            echo "$ZSH_PATH" | $SUDO tee -a /etc/shells
+        if ! grep -q "$ZSH_PATH" /etc/shells 2>/dev/null; then
+            echo "$ZSH_PATH" | $SUDO tee -a /etc/shells > /dev/null
         fi
         $SUDO chsh -s "$ZSH_PATH" "$(whoami)" 2>/dev/null || true
         echo "Set zsh as default shell"
