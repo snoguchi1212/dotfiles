@@ -92,3 +92,4 @@ alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 # Linux Commands
 alias ls="eza"
 alias exa="eza"
+alias rm="gomi"
