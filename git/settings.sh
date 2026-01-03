@@ -34,4 +34,4 @@ git config --list | grep "user.name\|user.email\|core.editor"
 git secrets --register-aws --global
 
 git secrets --install "${HOME}/.git-templates/git-secrets"
-git config --global "${HOME}/init.templateDir ~/.git-templates/git-secrets"
+git config --global init.templateDir "${HOME}/.git-templates/git-secrets"
