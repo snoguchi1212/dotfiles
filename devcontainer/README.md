@@ -7,7 +7,8 @@
 ```
 devcontainer/
 ├── Brewfile        # Homebrew パッケージ
-├── install.sh      # セットアップスクリプト
+├── install.sh      # セットアップスクリプト（自動実行）
+├── setup.sh        # ポストセットアップスクリプト（手動実行）
 ├── .zshrc          # zsh 設定
 ├── zim/
 │   └── .zimrc      # zimfw モジュール設定
@@ -79,6 +80,23 @@ VS Code の `settings.json` に以下の設定を追加する:
 | `~/.config/nvim/init.vim` | `nvim/init.vim` |
 | `~/.config/git/config` | `git/config/config` |
 | `~/.config/git/ignore` | `git/config/ignore` |
+
+## セットアップ後の追加設定
+
+devcontainer 立ち上げ後、以下のコマンドを実行してポストセットアップを完了する:
+
+```bash
+~/dotfiles/devcontainer/setup.sh
+```
+
+このスクリプトは以下を実行する:
+
+### Git の設定 (`git/settings.sh`)
+
+- Git config ファイルのシンボリックリンク設定
+- core.editor の設定（nvim -> vim -> vi フォールバック）
+- Git ユーザー名・メールアドレス（対話形式で入力）
+- git-secrets のインストールと設定（AWS 認証情報の漏洩防止）
 
 ## 注意事項
 
