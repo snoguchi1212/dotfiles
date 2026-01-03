@@ -93,6 +93,10 @@
   "explorer.confirmDragAndDrop": false,
   // 【 Others 】
   "redhat.telemetry.enabled": false,
+    // [Devcontainer Dotfiles]
+  "dotfiles.repository": "snoguchi1212/dotfiles",
+  "dotfiles.targetPath": "~/dotfiles",
+  "dotfiles.installCommand": "devcontainer/install.sh",
   // ------------------------------
   // git
   // ------------------------------
