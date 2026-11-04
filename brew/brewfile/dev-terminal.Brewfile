@@ -12,6 +12,10 @@ cask_args appdir: '/Applications'
 
   # A GPU-accelerated cross-platform terminal emulator and multiplexer
   cask 'wezterm'
+
+  # Ghostty-based terminal with vertical tabs and notifications for AI coding agents
+  tap 'manaflow-ai/cmux'
+  cask 'cmux'
 ### }}}
 
 
