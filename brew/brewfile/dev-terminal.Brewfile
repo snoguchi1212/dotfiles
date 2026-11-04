@@ -10,9 +10,6 @@ cask_args appdir: '/Applications'
   # Terminal Emulator for macOS
   # cask 'iterm2' if OS.mac?
 
-  # simple Rust-based terminal emulator for macOS
-  cask 'alacritty'
-
   # A GPU-accelerated cross-platform terminal emulator and multiplexer
   # cask 'wezterm'
 ### }}}

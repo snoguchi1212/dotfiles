@@ -6,7 +6,6 @@
 !.editorconfig
 !.prettierrc
 
-!alacritty/*
 !bin/*
 !bin/scripts/*
 !bin/raycast/*

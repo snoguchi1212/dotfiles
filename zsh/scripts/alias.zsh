@@ -23,12 +23,6 @@ alias vizim="vim $DOTFILES/zsh/scripts/zim.zsh"
 alias zim="vim $DOTFILES/zsh/zim/zimrc.zsh"
 
 # ------------------
-# alacritty
-# ------------------
-alias vialacritty="vim $DOTFILES/alacritty/alacritty.toml"
-alias vialacrittytheme="vim $DOTFILES/alacritty/theme.toml"
-
-# ------------------
 # bin
 # ------------------
 alias localbin="cd $DOTFILES/bin/.local/scripts"

@@ -41,7 +41,6 @@ bash $DOTFILES/brew/install.sh
 
 ## TODO
 
-- [x] alacritty
 - [x] bin
 - [x] brew
 - [x] espanso (text expander)
@@ -68,8 +67,7 @@ bash $DOTFILES/brew/install.sh
 6. starship
 7. nvim
 8. tmux
-9. alacritty
-10. yabai
-11. karabiner (keyboard modifier)
-12. skhd (keyboard binder)
-13. neovide
+9. yabai
+10. karabiner (keyboard modifier)
+11. skhd (keyboard binder)
+12. neovide
