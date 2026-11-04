@@ -1,0 +1,2 @@
+$DOTFILES/wezterm/wezterm.lua=$HOME/.config/wezterm/wezterm.lua
+$DOTFILES/wezterm/theme.lua=$HOME/.config/wezterm/theme.lua

@@ -54,6 +54,7 @@ bash $DOTFILES/brew/install.sh
 - [ ] skhd (keyboard binder)
 - [x] starship
 - [x] tmux
+- [x] wezterm
 - [ ] yabai
 - [x] zsh
 

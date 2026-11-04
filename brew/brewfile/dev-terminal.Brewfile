@@ -11,7 +11,7 @@ cask_args appdir: '/Applications'
   # cask 'iterm2' if OS.mac?
 
   # A GPU-accelerated cross-platform terminal emulator and multiplexer
-  # cask 'wezterm'
+  cask 'wezterm'
 ### }}}
 
 

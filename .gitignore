@@ -26,6 +26,7 @@
 !vscode/extensions/*
 !vscode/settings/*
 !vscode/snippets/*
+!wezterm/*
 !zsh/*
 !zsh/scripts/*
 !zsh/zim/*
